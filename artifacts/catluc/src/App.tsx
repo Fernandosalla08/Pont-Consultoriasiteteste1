@@ -341,9 +341,9 @@ function VSM() {
 /* ── Automation Philosophy ── */
 function AutomationPhilosophy() {
   const steps = [
-    { num: "01", icon: FiMapPin, title: "Mapear & Expor", desc: "Shingo VSM revela cada perda e fluxo quebrado no seu processo atual" },
-    { num: "02", icon: FiTarget, title: "Simplificar Primeiro", desc: "Teoria das Restrições + Lean eliminam desperdícios, sincronizam o fluxo e enxugam ao máximo" },
-    { num: "03", icon: FiCpu, title: "Só Então Automatizar", desc: "Agora automatizamos — um processo limpo, enxuto e otimizado — multiplicando a eficiência, nunca travando desperdícios" },
+    { num: "1", icon: FiMapPin, title: "Mapear & Expor", desc: "Shingo VSM revela cada perda e fluxo quebrado no seu processo atual" },
+    { num: "2", icon: FiTarget, title: "Simplificar Primeiro", desc: "Teoria das Restrições + Lean eliminam desperdícios, sincronizam o fluxo e enxugam ao máximo" },
+    { num: "3", icon: FiCpu, title: "Só Então Automatizar", desc: "Agora automatizamos — um processo limpo, enxuto e otimizado — multiplicando a eficiência, nunca travando desperdícios" },
   ];
   return (
     <section className="bg-[#050505] border-t border-white/5 py-28">
@@ -365,7 +365,7 @@ function AutomationPhilosophy() {
           {steps.map((s, i) => (
             <Section key={i}>
               <motion.div variants={fadeUp} custom={i} className="bg-[#050505] p-10 relative h-full">
-                <div className="text-[#1034A6]/20 text-8xl font-black absolute top-6 right-6 leading-none select-none">{s.num}</div>
+                <div className="text-[#1034A6]/60 text-8xl font-black absolute top-6 right-6 leading-none select-none">{s.num}</div>
                 <s.icon className="text-[#1034A6] mb-5" size={24} />
                 <h3 className="text-white font-bold text-xl uppercase tracking-tight mb-3">{s.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
@@ -570,11 +570,11 @@ function Industries() {
 
 /* ── Why Choose ── */
 const differentiators = [
-  { num: "01", title: "Expertise Técnica e de Negócios", desc: "Combinação rara de consultoria estratégica e automação industrial hands-on. Não apenas aconselhamos — implementamos." },
-  { num: "02", title: "Simplificar Antes de Automatizar", desc: "Nunca automatizamos perdas. Primeiro eliminamos desperdícios com Shingo VSM e Teoria das Restrições, depois automatizamos processos enxutos." },
-  { num: "03", title: "Teoria das Restrições + Sistema Toyota Comprovados", desc: "Dois dos métodos operacionais mais poderosos combinados — entregando resultados mensuráveis em 90 dias ou menos." },
-  { num: "04", title: "A Bússola Financeira", desc: "Nossa metodologia conecta o chão de fábrica à engenharia de produto, engenharia de processo e controle financeiro." },
-  { num: "05", title: "Agnósticos em Tecnologia", desc: "Recomendamos o que é certo para a sua situação — laser, CNC, visão, robótica — não o que somos pagos para vender." },
+  { num: "1", title: "Expertise Técnica e de Negócios", desc: "Combinação rara de consultoria estratégica e automação industrial hands-on. Não apenas aconselhamos — implementamos." },
+  { num: "2", title: "Simplificar Antes de Automatizar", desc: "Nunca automatizamos perdas. Primeiro eliminamos desperdícios com Shingo VSM e Teoria das Restrições, depois automatizamos processos enxutos." },
+  { num: "3", title: "Teoria das Restrições + Sistema Toyota Comprovados", desc: "Dois dos métodos operacionais mais poderosos combinados — entregando resultados mensuráveis em 90 dias ou menos." },
+  { num: "4", title: "A Bússola Financeira", desc: "Nossa metodologia conecta o chão de fábrica à engenharia de produto, engenharia de processo e controle financeiro." },
+  { num: "5", title: "Agnósticos em Tecnologia", desc: "Recomendamos o que é certo para a sua situação — laser, CNC, visão, robótica — não o que somos pagos para vender." },
 ];
 
 function WhyChoose() {
@@ -594,7 +594,7 @@ function WhyChoose() {
           {differentiators.map((d, i) => (
             <Section key={i}>
               <motion.div variants={fadeUp} custom={i} className={`bg-[#050505] p-8 hover:bg-[#0a0a0a] transition-colors h-full ${i === differentiators.length - 1 && differentiators.length % 3 !== 0 ? "md:col-span-2 lg:col-span-1" : ""}`}>
-                <div className="text-[#1034A6] font-black text-3xl mb-5 opacity-40">{d.num}</div>
+                <div className="text-[#1034A6] font-black text-4xl mb-5 opacity-90">{d.num}</div>
                 <h3 className="text-white font-bold uppercase tracking-tight mb-3">{d.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{d.desc}</p>
               </motion.div>
