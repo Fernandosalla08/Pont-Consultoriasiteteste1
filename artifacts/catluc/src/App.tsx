@@ -692,22 +692,44 @@ function Contact() {
 /* ── Footer ── */
 function Footer() {
   return (
-    <footer className="bg-[#030303] border-t border-white/5 py-10">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        <img src={pontLogo} alt="Pont Consultoria" className="h-8 w-auto mix-blend-screen" style={{ filter: "contrast(1.8) brightness(1.4)" }} />
-        <p className="text-white/30 text-xs text-center">
-          © {new Date().getFullYear()} Pont Consultoria. Todos os direitos reservados.
-        </p>
-        <div className="flex gap-6">
-          {["Serviços", "Contato"].map((l) => (
-            <button
-              key={l}
-              onClick={() => document.getElementById(l.toLowerCase())?.scrollIntoView({ behavior: "smooth" })}
-              className="text-xs text-white/30 hover:text-white/60 uppercase tracking-wider transition-colors"
-            >
-              {l}
-            </button>
-          ))}
+    <footer className="bg-[#030303] border-t border-white/5">
+      {/* Grupo Pont */}
+      <div className="border-b border-white/5 py-10">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-4">
+          <p className="text-white/30 text-xs uppercase tracking-widest">Empresas do Grupo</p>
+          <a
+            href="https://www.pontautomacao.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="opacity-60 hover:opacity-100 transition-opacity duration-300"
+          >
+            <img
+              src="/pont-automacao-logo.png"
+              alt="Pont Automação"
+              className="h-16 w-auto"
+            />
+          </a>
+        </div>
+      </div>
+
+      {/* Copyright row */}
+      <div className="py-8">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <img src={pontLogo} alt="Pont Consultoria" className="h-8 w-auto mix-blend-screen" style={{ filter: "contrast(1.8) brightness(1.4)" }} />
+          <p className="text-white/30 text-xs text-center">
+            © {new Date().getFullYear()} Pont Consultoria. Todos os direitos reservados.
+          </p>
+          <div className="flex gap-6">
+            {["Serviços", "Contato"].map((l) => (
+              <button
+                key={l}
+                onClick={() => document.getElementById(l.toLowerCase())?.scrollIntoView({ behavior: "smooth" })}
+                className="text-xs text-white/30 hover:text-white/60 uppercase tracking-wider transition-colors"
+              >
+                {l}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
