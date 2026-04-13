@@ -148,7 +148,7 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="text-white/60 text-lg md:text-xl max-w-2xl leading-relaxed mb-14"
         >
-          Transformamos negócios de forma mensurável utilizando a Teoria das Restrições e o Sistema Toyota de Produção — combinados com automação industrial de ponta: corte a laser, CNC, solda e visão de máquina.
+          Transformamos negócios de forma mensurável utilizando a Teoria das Restrições e o Sistema Toyota de Produção — combinados com automação industrial de ponta.
         </motion.p>
 
         <motion.div
@@ -529,7 +529,7 @@ function FinancialCompass() {
 
 /* ── Industries ── */
 const industries = [
-  { icon: FiSettings, title: "Metal & Ferraria", desc: "Corte a laser, solda, usinagem CNC e operações de prensa-dobradeira." },
+  { icon: FiSettings, title: "Metal & Ferraria", desc: "Solda, usinagem e operações de prensa-dobradeira." },
   { icon: FiActivity, title: "Automotivo", desc: "Linhas de montagem, plantas de estampagem, fornecedores tier — melhoria rápida de throughput." },
   { icon: FiTarget, title: "Aeroespacial", desc: "Fabricação de alta precisão e automação de inspeção para ambientes AS9100." },
   { icon: FiCpu, title: "Equipamentos Industriais", desc: "Construtores de máquinas customizadas, OEMs e montagem industrial — projetado para fluxo." },
@@ -574,7 +574,7 @@ const differentiators = [
   { num: "2", title: "Simplificar Antes de Automatizar", desc: "Nunca automatizamos perdas. Primeiro eliminamos desperdícios com Shingo VSM e Teoria das Restrições, depois automatizamos processos enxutos." },
   { num: "3", title: "Teoria das Restrições + Sistema Toyota Comprovados", desc: "Dois dos métodos operacionais mais poderosos combinados — entregando resultados mensuráveis em 90 dias ou menos." },
   { num: "4", title: "A Bússola Financeira", desc: "Nossa metodologia conecta o chão de fábrica à engenharia de produto, engenharia de processo e controle financeiro." },
-  { num: "5", title: "Agnósticos em Tecnologia", desc: "Recomendamos o que é certo para a sua situação — laser, CNC, visão, robótica — não o que somos pagos para vender." },
+  { num: "5", title: "Agnósticos em Tecnologia", desc: "Recomendamos o que é certo para a sua situação — robótica, automação, sistemas industriais — não o que somos pagos para vender." },
 ];
 
 function WhyChoose() {
