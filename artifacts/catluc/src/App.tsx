@@ -215,18 +215,6 @@ const services = [
     desc: "Soluções de automação turnkey integrando robôs, CLPs e interfaces IHM para aumentar velocidade, precisão e confiabilidade no chão de fábrica.",
     tags: ["Robótica", "CLP / IHM", "Integração de Sistemas"],
   },
-  {
-    icon: FiCpu,
-    title: "Sistemas Laser & CNC",
-    desc: "Seleção, instalação e otimização de máquinas de corte laser e centros de usinagem CNC. Maximizamos OEE, reduzimos tempos de setup e melhoramos a qualidade do corte.",
-    tags: ["Corte a Laser", "Usinagem CNC", "Otimização de OEE"],
-  },
-  {
-    icon: FiEye,
-    title: "Visão de Máquina & Solda",
-    desc: "Visão de máquina avançada para inspeção automatizada e controle de qualidade, combinada com integração de automação de solda robótica MIG/TIG e laser.",
-    tags: ["Visão de Máquina", "Solda Robótica", "Controle de Qualidade"],
-  },
 ];
 
 function Services() {
