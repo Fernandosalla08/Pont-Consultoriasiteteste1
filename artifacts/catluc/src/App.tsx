@@ -285,10 +285,10 @@ function VSM() {
             Sistema Toyota de Produção
           </motion.p>
           <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
-            SHINGO VSM &amp; <em className="not-italic text-[#1034A6]">ANÁLISE LEAN</em>
+            FLUXO DE VALOR DO SHINGO &amp; <em className="not-italic text-[#1034A6]">ANÁLISE LEAN</em>
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-3xl mb-6 leading-relaxed">
-            Realizamos uma análise profunda da sua fábrica usando o <strong className="text-white">Shingo VSM — Mapa do Fluxo de Valor Shingo</strong>, a ferramenta central do Sistema Toyota de Produção criada por <strong className="text-white">Shigeo Shingo</strong> — tornando cada perda, desperdício e ineficiência visível em todo o fluxo produtivo.
+            Realizamos uma análise profunda da sua fábrica usando o <strong className="text-white">Fluxo de Valor do Shingo — Mapa do Fluxo de Valor Shingo</strong>, a ferramenta central do Sistema Toyota de Produção criada por <strong className="text-white">Shigeo Shingo</strong> — tornando cada perda, desperdício e ineficiência visível em todo o fluxo produtivo.
           </motion.p>
           <motion.p variants={fadeUp} custom={3} className="text-white/50 text-base max-w-3xl mb-10 leading-relaxed">
             A partir do VSM, aplicamos <strong className="text-white">Análise de Pareto</strong> para ranquear e priorizar as maiores perdas, concentrando energia exatamente onde ela entrega os resultados mais rápidos e significativos.
@@ -341,7 +341,7 @@ function VSM() {
 /* ── Automation Philosophy ── */
 function AutomationPhilosophy() {
   const steps = [
-    { num: "1", icon: FiMapPin, title: "Mapear & Expor", desc: "Shingo VSM revela cada perda e fluxo quebrado no seu processo atual" },
+    { num: "1", icon: FiMapPin, title: "Mapear & Expor", desc: "Fluxo de Valor do Shingo revela cada perda e fluxo quebrado no seu processo atual" },
     { num: "2", icon: FiTarget, title: "Simplificar Primeiro", desc: "Teoria das Restrições + Lean eliminam desperdícios, sincronizam o fluxo e enxugam ao máximo" },
     { num: "3", icon: FiCpu, title: "Só Então Automatizar", desc: "Agora automatizamos — um processo limpo, enxuto e otimizado — multiplicando a eficiência, nunca travando desperdícios" },
   ];
@@ -571,7 +571,7 @@ function Industries() {
 /* ── Why Choose ── */
 const differentiators = [
   { num: "1", title: "Expertise Técnica e de Negócios", desc: "Combinação rara de consultoria estratégica e automação industrial hands-on. Não apenas aconselhamos — implementamos." },
-  { num: "2", title: "Simplificar Antes de Automatizar", desc: "Nunca automatizamos perdas. Primeiro eliminamos desperdícios com Shingo VSM e Teoria das Restrições, depois automatizamos processos enxutos." },
+  { num: "2", title: "Simplificar Antes de Automatizar", desc: "Nunca automatizamos perdas. Primeiro eliminamos desperdícios com Fluxo de Valor do Shingo e Teoria das Restrições, depois automatizamos processos enxutos." },
   { num: "3", title: "Teoria das Restrições + Sistema Toyota Comprovados", desc: "Dois dos métodos operacionais mais poderosos combinados — entregando resultados mensuráveis em 90 dias ou menos." },
   { num: "4", title: "A Bússola Financeira", desc: "Nossa metodologia conecta o chão de fábrica à engenharia de produto, engenharia de processo e controle financeiro." },
   { num: "5", title: "Agnósticos em Tecnologia", desc: "Recomendamos o que é certo para a sua situação — robótica, automação, sistemas industriais — não o que somos pagos para vender." },
