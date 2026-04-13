@@ -752,14 +752,15 @@ function SplashGate({ onEnter }: { onEnter: () => void }) {
           <span className="text-white font-bold text-sm tracking-[0.2em] uppercase group-hover:text-[#f97316] transition-colors duration-300">Clique Aqui</span>
         </motion.div>
         <motion.div
+          className="flex items-center justify-center h-20 w-56"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0, transition: { delay: 0.7, duration: 0.6 } }}
         >
           <img
             src={pontLogoAutomacao}
             alt="Pont Automação"
-            className="w-48 h-auto"
-            style={{ filter: "brightness(0) invert(1)" }}
+            className="max-h-full w-auto object-contain"
+            style={{ filter: "brightness(0) invert(1)", imageRendering: "crisp-edges" }}
           />
         </motion.div>
       </a>
@@ -794,13 +795,14 @@ function SplashGate({ onEnter }: { onEnter: () => void }) {
           <span className="text-white font-bold text-sm tracking-[0.2em] uppercase group-hover:text-[#f97316] transition-colors duration-300">Permaneça nesse site</span>
         </motion.div>
         <motion.div
+          className="flex items-center justify-center h-20 w-56"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.6 } }}
         >
           <img
             src={pontLogoConsultoria}
             alt="Pont Consultoria"
-            className="w-48 h-auto mix-blend-screen"
+            className="max-h-full w-auto object-contain mix-blend-screen"
             style={{ filter: "contrast(1.8) brightness(1.4)" }}
           />
         </motion.div>
