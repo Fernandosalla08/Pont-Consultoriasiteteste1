@@ -49,7 +49,13 @@ function Section({ children, className = "" }: { children: React.ReactNode; clas
 /* ── Navbar ── */
 function Navbar() {
   const [open, setOpen] = useState(false);
-  const links = ["Serviços", "VSM & Lean", "TOC", "Indústrias", "Contato"];
+  const links = [
+    { label: "Serviços", id: "serviços" },
+    { label: "VSM & Lean", id: "vsm-&-lean" },
+    { label: "Teoria das Restrições", id: "toc" },
+    { label: "Indústrias", id: "indústrias" },
+    { label: "Contato", id: "contato" },
+  ];
 
   function scrollTo(id: string) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -63,11 +69,11 @@ function Navbar() {
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <button
-              key={l}
-              onClick={() => scrollTo(l.toLowerCase().replace(/\s/g, "-"))}
+              key={l.id}
+              onClick={() => scrollTo(l.id)}
               className="text-sm text-white/60 hover:text-white transition-colors uppercase tracking-wider font-medium"
             >
-              {l}
+              {l.label}
             </button>
           ))}
           <button
@@ -85,11 +91,11 @@ function Navbar() {
         <div className="md:hidden bg-black border-t border-white/10 px-6 py-4 flex flex-col gap-4">
           {links.map((l) => (
             <button
-              key={l}
-              onClick={() => scrollTo(l.toLowerCase().replace(/\s/g, "-"))}
+              key={l.id}
+              onClick={() => scrollTo(l.id)}
               className="text-left text-white/70 hover:text-white uppercase tracking-wider text-sm font-medium"
             >
-              {l}
+              {l.label}
             </button>
           ))}
         </div>
@@ -200,8 +206,8 @@ const services = [
   {
     icon: FiTarget,
     title: "Teoria das Restrições",
-    desc: "Usando o framework TOC de Goldratt, identificamos gargalos ocultos e aplicamos os Cinco Passos de Foco para máximo throughput com mínimo investimento.",
-    tags: ["TOC", "Tambor-Pulmão-Corda", "Corrente Crítica"],
+    desc: "Usando o framework Teoria das Restrições de Goldratt, identificamos gargalos ocultos e aplicamos os Cinco Passos de Foco para máximo throughput com mínimo investimento.",
+    tags: ["Teoria das Restrições", "Tambor-Pulmão-Corda", "Corrente Crítica"],
   },
   {
     icon: FiLayers,
@@ -336,7 +342,7 @@ function VSM() {
 function AutomationPhilosophy() {
   const steps = [
     { num: "01", icon: FiMapPin, title: "Mapear & Expor", desc: "Shingo VSM revela cada perda e fluxo quebrado no seu processo atual" },
-    { num: "02", icon: FiTarget, title: "Simplificar Primeiro", desc: "TOC + Lean eliminam desperdícios, sincronizam o fluxo e enxugam ao máximo" },
+    { num: "02", icon: FiTarget, title: "Simplificar Primeiro", desc: "Teoria das Restrições + Lean eliminam desperdícios, sincronizam o fluxo e enxugam ao máximo" },
     { num: "03", icon: FiCpu, title: "Só Então Automatizar", desc: "Agora automatizamos — um processo limpo, enxuto e otimizado — multiplicando a eficiência, nunca travando desperdícios" },
   ];
   return (
@@ -411,7 +417,7 @@ function TOC() {
             Teoria das Restrições
           </motion.p>
           <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-16">
-            A ABORDAGEM <em className="not-italic text-[#f97316]">TOC</em>
+            A ABORDAGEM <em className="not-italic text-[#f97316]">TEORIA DAS RESTRIÇÕES</em>
           </motion.h2>
         </Section>
 
@@ -482,7 +488,7 @@ function FinancialCompass() {
             A <em className="not-italic text-[#f97316]">BÚSSOLA</em> FINANCEIRA
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-2xl mb-12 leading-relaxed">
-            Uma metodologia que conecta a Contabilidade de Ganhos TOC à <strong className="text-white">Engenharia de Produto</strong> e <strong className="text-white">Engenharia de Processo</strong> — o elo perdido entre o chão de fábrica e o controle financeiro.
+            Uma metodologia que conecta a Contabilidade de Ganhos da Teoria das Restrições à <strong className="text-white">Engenharia de Produto</strong> e <strong className="text-white">Engenharia de Processo</strong> — o elo perdido entre o chão de fábrica e o controle financeiro.
           </motion.p>
         </Section>
 
@@ -565,8 +571,8 @@ function Industries() {
 /* ── Why Choose ── */
 const differentiators = [
   { num: "01", title: "Expertise Técnica e de Negócios", desc: "Combinação rara de consultoria estratégica e automação industrial hands-on. Não apenas aconselhamos — implementamos." },
-  { num: "02", title: "Simplificar Antes de Automatizar", desc: "Nunca automatizamos perdas. Primeiro eliminamos desperdícios com Shingo VSM e TOC, depois automatizamos processos enxutos." },
-  { num: "03", title: "TOC + Sistema Toyota Comprovados", desc: "Dois dos métodos operacionais mais poderosos combinados — entregando resultados mensuráveis em 90 dias ou menos." },
+  { num: "02", title: "Simplificar Antes de Automatizar", desc: "Nunca automatizamos perdas. Primeiro eliminamos desperdícios com Shingo VSM e Teoria das Restrições, depois automatizamos processos enxutos." },
+  { num: "03", title: "Teoria das Restrições + Sistema Toyota Comprovados", desc: "Dois dos métodos operacionais mais poderosos combinados — entregando resultados mensuráveis em 90 dias ou menos." },
   { num: "04", title: "A Bússola Financeira", desc: "Nossa metodologia conecta o chão de fábrica à engenharia de produto, engenharia de processo e controle financeiro." },
   { num: "05", title: "Agnósticos em Tecnologia", desc: "Recomendamos o que é certo para a sua situação — laser, CNC, visão, robótica — não o que somos pagos para vender." },
 ];
