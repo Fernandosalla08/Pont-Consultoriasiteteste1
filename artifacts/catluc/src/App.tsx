@@ -693,23 +693,38 @@ function Contact() {
 function Footer() {
   return (
     <footer className="bg-[#030303] border-t border-white/5">
-      {/* Grupo Pont */}
-      <div className="border-b border-white/5 py-10">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-4">
-          <p className="text-white/30 text-xs uppercase tracking-widest">Empresas do Grupo</p>
-          <a
-            href="https://www.pontautomacao.com.br/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="opacity-60 hover:opacity-100 transition-opacity duration-300"
-          >
-            <img
-              src="/pont-automacao-logo.png"
-              alt="Pont Automação"
-              className="h-16 w-auto"
-            />
-          </a>
-        </div>
+      {/* Grupo Pont CTA */}
+      <div className="border-b border-white/5 py-16">
+        <a
+          href="https://www.pontautomacao.com.br/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center gap-5 group"
+        >
+          <p className="text-white font-bold text-sm uppercase tracking-widest text-center leading-relaxed">
+            Soluções em<br />Engenharia de Produto
+          </p>
+          <div className="flex flex-col items-center text-white/40 group-hover:text-[#f97316] transition-colors duration-300">
+            <svg width="48" height="56" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Block arrow outline — shaft + arrowhead */}
+              <path
+                d="M17 2 L17 28 L6 28 L24 52 L42 28 L31 28 L31 2 Z"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinejoin="miter"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <p className="text-white/50 text-xs uppercase tracking-[0.3em] group-hover:text-white transition-colors duration-300">
+            Clique aqui
+          </p>
+          <img
+            src="/pont-automacao-logo.png"
+            alt="Pont Automação"
+            className="h-14 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+          />
+        </a>
       </div>
 
       {/* Copyright row */}
