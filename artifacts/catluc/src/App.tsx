@@ -722,7 +722,7 @@ function Footer() {
           <img
             src="/pont-automacao-logo.png"
             alt="Pont Automação"
-            className="h-14 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+            className="h-28 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
           />
         </a>
       </div>
