@@ -148,7 +148,7 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="text-white/60 text-lg md:text-xl max-w-2xl leading-relaxed mb-14"
         >
-          Impulsionamos transformações de negócios mensuráveis através da Teoria das Restrições e o Sistema Toyota de Produção — combinados com automação industrial de ponta: corte a laser, CNC, solda e visão de máquina.
+          Transformamos negócios de forma mensurável utilizando a Teoria das Restrições e o Sistema Toyota de Produção — combinados com automação industrial de ponta: corte a laser, CNC, solda e visão de máquina.
         </motion.p>
 
         <motion.div
