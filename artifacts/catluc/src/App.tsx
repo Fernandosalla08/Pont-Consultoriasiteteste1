@@ -25,6 +25,7 @@ import {
 } from "react-icons/fi";
 
 const pontLogoConsultoria = "/pont-logo-orig.png";
+const pontLogoAutomacao = "/pont-automacao-logo.png";
 
 /* ── helpers ── */
 const fadeUp = {
@@ -715,22 +716,6 @@ function Footer() {
 }
 
 /* ── SplashGate ── */
-function PontArcSVG({ subtitle }: { subtitle: string }) {
-  return (
-    <svg viewBox="0 0 220 90" className="w-48 h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* arc / bridge graphic */}
-      <path d="M20 55 Q60 5 110 5 Q160 5 200 55" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-      <line x1="110" y1="5" x2="110" y2="30" stroke="white" strokeWidth="1.5"/>
-      <line x1="60" y1="22" x2="60" y2="44" stroke="white" strokeWidth="1.5"/>
-      <line x1="160" y1="22" x2="160" y2="44" stroke="white" strokeWidth="1.5"/>
-      {/* PONT text */}
-      <text x="18" y="72" fontFamily="'Space Grotesk', sans-serif" fontWeight="700" fontSize="28" fill="white" letterSpacing="3">PONT</text>
-      {/* subtitle */}
-      <text x="18" y="86" fontFamily="'Space Grotesk', sans-serif" fontWeight="400" fontSize="11" fill="white" letterSpacing="2">{subtitle}</text>
-    </svg>
-  );
-}
-
 function SplashGate({ onEnter }: { onEnter: () => void }) {
   return (
     <motion.div
@@ -770,7 +755,12 @@ function SplashGate({ onEnter }: { onEnter: () => void }) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0, transition: { delay: 0.7, duration: 0.6 } }}
         >
-          <PontArcSVG subtitle="automação" />
+          <img
+            src={pontLogoAutomacao}
+            alt="Pont Automação"
+            className="w-48 h-auto"
+            style={{ filter: "brightness(0) invert(1)" }}
+          />
         </motion.div>
       </a>
 
