@@ -1,598 +1,748 @@
-import React from "react";
-import { Switch, Route, Router as WouterRouter } from "wouter";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { motion } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import {
-  FiSettings,
+  FiTrendingUp,
   FiTarget,
   FiLayers,
+  FiSettings,
   FiCpu,
   FiEye,
   FiArrowRight,
   FiCheckCircle,
-  FiTrendingUp,
   FiZap,
   FiCrosshair,
   FiMaximize,
   FiRepeat,
-  FiMail
+  FiMail,
+  FiMenu,
+  FiX,
+  FiMapPin,
+  FiBarChart2,
+  FiActivity,
+  FiRotateCcw,
+  FiSliders,
+  FiFlag,
 } from "react-icons/fi";
-import NotFound from "@/pages/not-found";
 
-const queryClient = new QueryClient();
+/* ── helpers ── */
+const fadeUp = {
+  hidden: { opacity: 0, y: 32 },
+  visible: (i: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" },
+  }),
+};
 
-const HeroSection = () => {
+function Section({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef(null);
+  const visible = useInView(ref, { once: true, margin: "-80px" });
   return (
-    <section className="relative min-h-[100dvh] flex flex-col justify-center overflow-hidden border-b border-white/10">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:24px_24px] opacity-20 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
-      
-      <div className="container mx-auto px-6 relative z-10 pt-20">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 border border-primary/30 bg-primary/10 text-primary text-sm font-semibold tracking-widest uppercase">
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            CatLuc Consulting
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter uppercase leading-[0.9] mb-8 text-white">
-            Transforme.<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-600">Automatize.</span><br />
-            Acelere.
-          </h1>
-          
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-12 leading-relaxed">
-            Impulsionamos transformações de negócios mensuráveis através da Teoria das Restrições e o Sistema Toyota de Produção — combinados com automação industrial de ponta: corte a laser, CNC, solda e visão de máquina.
-          </p>
+    <motion.div ref={ref} initial="hidden" animate={visible ? "visible" : "hidden"} className={className}>
+      {children}
+    </motion.div>
+  );
+}
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-            {[
-              { label: "Ganho de Throughput Médio", value: "3X" },
-              { label: "Redução de Desperdícios", value: "60%" },
-              { label: "Retorno Rápido", value: "90D" }
-            ].map((stat, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, borderLeftColor: "transparent" }}
-                animate={{ opacity: 1, borderLeftColor: "hsl(var(--primary))" }}
-                transition={{ delay: 0.5 + (i * 0.1), duration: 0.5 }}
-                className="border-l-2 border-primary pl-4 py-1 bg-white/5 backdrop-blur-sm"
-              >
-                <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+/* ── Navbar ── */
+function Navbar() {
+  const [open, setOpen] = useState(false);
+  const links = ["Serviços", "VSM & Lean", "TOC", "Indústrias", "Contato"];
 
-          <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-sm font-bold uppercase tracking-widest transition-all hover:translate-x-1 flex items-center gap-3">
-            Inicie sua Transformação
-            <FiArrowRight className="w-4 h-4" />
+  function scrollTo(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setOpen(false);
+  }
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+        <span className="font-bold text-white text-xl tracking-tight">
+          PONT <span className="text-[#f97316]">CONSULTORIA</span>
+        </span>
+        <nav className="hidden md:flex items-center gap-8">
+          {links.map((l) => (
+            <button
+              key={l}
+              onClick={() => scrollTo(l.toLowerCase().replace(/\s/g, "-"))}
+              className="text-sm text-white/60 hover:text-white transition-colors uppercase tracking-wider font-medium"
+            >
+              {l}
+            </button>
+          ))}
+          <button
+            onClick={() => scrollTo("contato")}
+            className="text-sm bg-[#f97316] hover:bg-orange-500 text-black font-bold px-5 py-2 transition-colors uppercase tracking-wider"
+          >
+            Fale Conosco
           </button>
+        </nav>
+        <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
+          {open ? <FiX size={22} /> : <FiMenu size={22} />}
+        </button>
+      </div>
+      {open && (
+        <div className="md:hidden bg-black border-t border-white/10 px-6 py-4 flex flex-col gap-4">
+          {links.map((l) => (
+            <button
+              key={l}
+              onClick={() => scrollTo(l.toLowerCase().replace(/\s/g, "-"))}
+              className="text-left text-white/70 hover:text-white uppercase tracking-wider text-sm font-medium"
+            >
+              {l}
+            </button>
+          ))}
+        </div>
+      )}
+    </header>
+  );
+}
+
+/* ── Hero ── */
+function Hero() {
+  return (
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pt-16">
+      {/* grid overlay */}
+      <div
+        className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/20 to-black pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-[#f97316] text-sm font-bold tracking-[0.25em] uppercase mb-6"
+        >
+          Pont Consultoria — Brasil
+        </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.88] tracking-tighter text-white mb-10"
+        >
+          TRANSFORME.{" "}
+          <br className="hidden md:block" />
+          AUTOMATIZE.{" "}
+          <br className="hidden md:block" />
+          <em className="not-italic text-[#f97316]">ACELERE.</em>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="text-white/60 text-lg md:text-xl max-w-2xl leading-relaxed mb-14"
+        >
+          Impulsionamos transformações de negócios mensuráveis através da Teoria das Restrições e o Sistema Toyota de Produção — combinados com automação industrial de ponta: corte a laser, CNC, solda e visão de máquina.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="flex flex-col sm:flex-row gap-6 sm:gap-16 mb-14"
+        >
+          {[
+            { value: "3X", label: "Ganho Médio de Throughput" },
+            { value: "60%", label: "Redução de Desperdícios" },
+            { value: "90D", label: "Retorno Rápido" },
+          ].map((m) => (
+            <div key={m.label} className="border-l-2 border-[#f97316] pl-4">
+              <div className="text-3xl font-black text-white">{m.value}</div>
+              <div className="text-xs text-white/50 uppercase tracking-widest mt-1">{m.label}</div>
+            </div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="flex flex-wrap gap-4"
+        >
+          <a
+            href="#contato"
+            onClick={(e) => { e.preventDefault(); document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" }); }}
+            className="inline-flex items-center gap-2 bg-[#f97316] hover:bg-orange-500 text-black font-bold px-8 py-4 text-sm uppercase tracking-wider transition-all"
+          >
+            Inicie sua Transformação <FiArrowRight />
+          </a>
+          <a
+            href="#serviços"
+            onClick={(e) => { e.preventDefault(); document.getElementById("serviços")?.scrollIntoView({ behavior: "smooth" }); }}
+            className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white font-bold px-8 py-4 text-sm uppercase tracking-wider transition-all"
+          >
+            Ver Serviços
+          </a>
         </motion.div>
       </div>
     </section>
   );
-};
+}
 
-const ServicesSection = () => {
-  const services = [
-    {
-      title: "Virada de Negócios",
-      desc: "Diagnóstico e transformação rápida de operações com baixo desempenho. Identificamos as restrições centrais e criamos um roteiro claro para resultados extraordinários.",
-      icon: <FiTrendingUp className="w-8 h-8 text-primary" />,
-      tags: ["Turnaround", "Impacto no P&L", "Gestão de Mudanças"]
-    },
-    {
-      title: "Teoria das Restrições",
-      desc: "Usando o framework TOC de Goldratt, identificamos gargalos ocultos e aplicamos os Cinco Passos de Foco para máximo throughput com mínimo investimento.",
-      icon: <FiTarget className="w-8 h-8 text-primary" />,
-      tags: ["TOC", "Tambor-Pulmão-Corda", "Corrente Crítica"]
-    },
-    {
-      title: "Sistemas de Produção",
-      desc: "Lean e fluxo baseado em design para sua indústria. Otimizamos layout, fluxo de material, programação e planejamento de mão de obra.",
-      icon: <FiLayers className="w-8 h-8 text-primary" />,
-      tags: ["Manufatura Enxuta", "Design de Fluxo", "Kaizen"]
-    },
-    {
-      title: "Automação Industrial",
-      desc: "Soluções de automação turnkey com robôs, CLPs e interfaces IHM para mais velocidade, precisão e confiabilidade no chão de fábrica.",
-      icon: <FiSettings className="w-8 h-8 text-primary" />,
-      tags: ["Robótica", "CLP / IHM", "Integração de Sistemas"]
-    },
-    {
-      title: "Sistemas Laser & CNC",
-      desc: "Seleção, instalação e otimização de máquinas de corte laser e centros de usinagem CNC. Maximizamos OEE, reduzimos tempos de setup e melhoramos a qualidade.",
-      icon: <FiCpu className="w-8 h-8 text-primary" />,
-      tags: ["Corte a Laser", "Usinagem CNC", "Otimização de OEE"]
-    },
-    {
-      title: "Visão de Máquina & Solda",
-      desc: "Visão de máquina avançada para inspeção automatizada e controle de qualidade, com integração de automação de solda robótica MIG/TIG e laser.",
-      icon: <FiEye className="w-8 h-8 text-primary" />,
-      tags: ["Visão de Máquina", "Solda Robótica", "Controle de Qualidade"]
-    }
-  ];
+/* ── Services ── */
+const services = [
+  {
+    icon: FiTrendingUp,
+    title: "Virada de Negócios",
+    desc: "Diagnóstico e transformação rápida de operações com baixo desempenho. Identificamos as restrições centrais e construímos um roteiro claro para resultados extraordinários.",
+    tags: ["Turnaround", "Impacto no P&L", "Gestão de Mudanças"],
+  },
+  {
+    icon: FiTarget,
+    title: "Teoria das Restrições",
+    desc: "Usando o framework TOC de Goldratt, identificamos gargalos ocultos e aplicamos os Cinco Passos de Foco para máximo throughput com mínimo investimento.",
+    tags: ["TOC", "Tambor-Pulmão-Corda", "Corrente Crítica"],
+  },
+  {
+    icon: FiLayers,
+    title: "Sistemas de Produção",
+    desc: "Design de produção Lean e baseado em fluxo sob medida para a sua indústria. Otimizamos layout, fluxo de material, programação e planejamento de mão de obra.",
+    tags: ["Manufatura Enxuta", "Design de Fluxo", "Kaizen"],
+  },
+  {
+    icon: FiSettings,
+    title: "Automação Industrial",
+    desc: "Soluções de automação turnkey integrando robôs, CLPs e interfaces IHM para aumentar velocidade, precisão e confiabilidade no chão de fábrica.",
+    tags: ["Robótica", "CLP / IHM", "Integração de Sistemas"],
+  },
+  {
+    icon: FiCpu,
+    title: "Sistemas Laser & CNC",
+    desc: "Seleção, instalação e otimização de máquinas de corte laser e centros de usinagem CNC. Maximizamos OEE, reduzimos tempos de setup e melhoramos a qualidade do corte.",
+    tags: ["Corte a Laser", "Usinagem CNC", "Otimização de OEE"],
+  },
+  {
+    icon: FiEye,
+    title: "Visão de Máquina & Solda",
+    desc: "Visão de máquina avançada para inspeção automatizada e controle de qualidade, combinada com integração de automação de solda robótica MIG/TIG e laser.",
+    tags: ["Visão de Máquina", "Solda Robótica", "Controle de Qualidade"],
+  },
+];
 
+function Services() {
   return (
-    <section className="py-24 bg-background border-b border-white/5 relative">
-      <div className="container mx-auto px-6">
-        <div className="mb-16 md:flex justify-between items-end">
-          <div className="max-w-2xl">
-            <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-4">Nossa Expertise</h2>
-            <h3 className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-white">Domínio Total da Operação</h3>
-          </div>
-        </div>
+    <section id="serviços" className="bg-[#090909] border-t border-white/5 py-28">
+      <div className="max-w-7xl mx-auto px-6">
+        <Section>
+          <motion.p variants={fadeUp} className="text-[#f97316] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            O Que Fazemos
+          </motion.p>
+          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
+            NOSSOS <em className="not-italic text-[#f97316]">SERVIÇOS</em>
+          </motion.h2>
+          <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-2xl mb-16">
+            Da consultoria estratégica de negócios à automação industrial hands-on — soluções de ponta a ponta que criam vantagem competitiva duradoura.
+          </motion.p>
+        </Section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
           {services.map((s, i) => (
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              key={i} 
-              className="bg-[#0a0a0a] border border-white/10 p-8 hover:border-primary/50 transition-colors group relative overflow-hidden"
-            >
-              <div className="absolute top-0 left-0 w-full h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
-              <div className="mb-6 bg-white/5 w-16 h-16 flex items-center justify-center border border-white/10">
-                {s.icon}
-              </div>
-              <h4 className="text-xl font-bold mb-4 text-white uppercase tracking-tight">{s.title}</h4>
-              <p className="text-muted-foreground text-sm mb-8 leading-relaxed min-h-[80px]">{s.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {s.tags.map((t, j) => (
-                  <span key={j} className="text-xs font-semibold px-2 py-1 bg-white/5 text-white/70 border border-white/10">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const ShingoVSMSection = () => {
-  return (
-    <section className="py-24 bg-[#050505] border-b border-white/5 overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-4">Toyota Production System</h2>
-            <h3 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6 text-white">Shingo VSM & Análise Lean</h3>
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Realizamos uma análise profunda da sua fábrica usando o Shingo VSM — Mapa do Fluxo de Valor Shingo, a ferramenta central do Sistema Toyota de Produção criada por Shigeo Shingo — tornando cada perda, desperdício e ineficiência visível em todo o fluxo produtivo.
-            </p>
-
-            <div className="bg-primary/10 border-l-4 border-primary p-6 mb-8">
-              <div className="text-4xl font-bold text-primary mb-2">40–70%</div>
-              <div className="text-sm font-bold uppercase tracking-wider text-white">Redução Típica de Lead Time por Engajamento</div>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-white font-bold uppercase tracking-wide mb-4">O Diagnóstico Revela:</h4>
-              {[
-                "Falhas de Sincronismo de Produção",
-                "Perdas por Espera",
-                "Layout Ineficiente",
-                "Superprodução & WIP Excessivo",
-                "Retrabalho & Defeitos"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <FiCheckCircle className="w-5 h-5 text-primary shrink-0" />
-                  <span className="text-muted-foreground">{item}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 gap-4"
-          >
-            {[
-              "VSM do Estado Atual",
-              "Análise de Perdas por Pareto",
-              "Eventos de Melhoria Rápida (Kaizen)",
-              "Design de Fluxo e Sincronismo",
-              "Otimização de Layout",
-              "VSM do Estado Futuro"
-            ].map((item, i) => (
-              <div key={i} className="bg-background border border-white/10 p-6 flex flex-col justify-center text-center aspect-square hover:border-primary/50 transition-colors">
-                <span className="text-3xl font-bold text-white/10 mb-4">{`0${i+1}`}</span>
-                <span className="text-sm font-bold text-white uppercase tracking-tight">{item}</span>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const PhilosophySection = () => {
-  return (
-    <section className="py-32 relative bg-primary flex items-center justify-center">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwgMCwgMCwgMC4yKSIvPjwvc3ZnPg==')] opacity-50 mix-blend-overlay" />
-      <div className="container mx-auto px-6 relative z-10 text-center">
-        <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-[#0a0a0a] mb-16 max-w-4xl mx-auto">
-          Não automatize desperdícios.<br />
-          Automatize processos enxutos.
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {[
-            {
-              step: "01",
-              title: "Mapear & Expor",
-              desc: "Shingo VSM revela cada perda e fluxo quebrado no seu processo atual."
-            },
-            {
-              step: "02",
-              title: "Simplificar Primeiro",
-              desc: "TOC + Lean eliminam desperdícios, sincronizam fluxo e enxugam ao máximo."
-            },
-            {
-              step: "03",
-              title: "Só Então Automatizar",
-              desc: "Agora automatizamos — um processo limpo, enxuto e otimizado."
-            }
-          ].map((item, i) => (
-            <div key={i} className="bg-[#0a0a0a] p-8 text-left border border-black/10 relative">
-              <div className="text-primary text-5xl font-black opacity-20 absolute top-4 right-4">{item.step}</div>
-              <h3 className="text-white text-xl font-bold uppercase mb-4 tracking-tight relative z-10">{item.title}</h3>
-              <p className="text-white/70 text-sm leading-relaxed relative z-10">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-        
-        <p className="mt-16 text-[#0a0a0a] font-bold text-lg max-w-3xl mx-auto">
-          Poucas empresas no mundo aplicam essa sequência. A maioria automatiza primeiro — e incorpora permanentemente suas ineficiências em máquinas caras. Nós automatizamos processos enxutos. Nunca perdas.
-        </p>
-      </div>
-    </section>
-  );
-};
-
-const TOCSection = () => {
-  return (
-    <section className="py-24 bg-background border-b border-white/5 overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-4">Metodologia Goldratt</h2>
-          <h3 className="text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">Abordagem TOC</h3>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5 space-y-6">
-            {[
-              { title: "Identificar a Restrição", desc: "Mapeamos sua operação para encontrar o único gargalo que limita o throughput do sistema.", icon: <FiCrosshair /> },
-              { title: "Explorar a Restrição", desc: "Antes de adicionar recursos, extraímos o máximo de desempenho da restrição sem investimento adicional.", icon: <FiMaximize /> },
-              { title: "Subordinar Tudo ao Resto", desc: "Todos os outros processos se alinham para apoiar a restrição. Paramos de otimizar não-gargalos.", icon: <FiLayers /> },
-              { title: "Elevar a Restrição", desc: "Quando necessário, investimos precisamente — automação, capacidade ou competência — para quebrar permanentemente o gargalo.", icon: <FiZap /> },
-              { title: "Repetir & Acelerar", desc: "As restrições mudam conforme o desempenho melhora. Instalamos uma cultura de melhoria contínua.", icon: <FiRepeat /> }
-            ].map((step, i) => (
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                key={i} 
-                className="flex gap-4 p-4 border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors"
+            <Section key={i}>
+              <motion.div
+                variants={fadeUp}
+                custom={i}
+                className="bg-[#090909] p-8 hover:bg-[#0f0f0f] transition-colors group h-full"
               >
-                <div className="text-primary shrink-0 mt-1">{step.icon}</div>
-                <div>
-                  <h4 className="text-white font-bold uppercase text-sm mb-1">{`${i+1}. ${step.title}`}</h4>
-                  <p className="text-muted-foreground text-sm">{step.desc}</p>
+                <div className="w-12 h-12 border border-[#f97316]/40 flex items-center justify-center mb-6 group-hover:border-[#f97316] group-hover:bg-[#f97316]/10 transition-all">
+                  <s.icon className="text-[#f97316]" size={20} />
+                </div>
+                <h3 className="text-white font-bold text-lg uppercase tracking-tight mb-3">{s.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed mb-6">{s.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {s.tags.map((t) => (
+                    <span key={t} className="text-xs text-white/40 border border-white/10 px-2 py-0.5">{t}</span>
+                  ))}
                 </div>
               </motion.div>
+            </Section>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── VSM ── */
+const vsmCards = [
+  { icon: FiMapPin, title: "VSM do Estado Atual", desc: "Mapeamos todo o fluxo de valor como existe hoje — cada etapa, cada espera, cada passagem — do material bruto ao produto expedido. Todo desperdício fica visível." },
+  { icon: FiBarChart2, title: "Análise de Perdas por Pareto", desc: "Quantificamos cada perda em tempo, custo e capacidade e ranqueamos pelo impacto. Os 20% maiores problemas causam 80% do dano — vamos direto ao ponto." },
+  { icon: FiZap, title: "Eventos de Melhoria Rápida (Kaizen)", desc: "Workshops focados de 3–5 dias atacando as perdas de maior prioridade. Resultados imediatos e mensuráveis — sem meses de planejamento antes da ação." },
+  { icon: FiActivity, title: "Design de Fluxo e Sincronismo", desc: "Redesenhamos o fluxo de produção para eliminar esperas e sincronizar todas as etapas ao takt time do cliente — suave, contínuo e sem desperdício." },
+  { icon: FiSliders, title: "Otimização de Layout", desc: "Layout físico da fábrica redesenhado para movimento mínimo, fluxo lógico e gestão visual." },
+  { icon: FiFlag, title: "VSM do Estado Futuro", desc: "Desenhamos o estado futuro ideal — um blueprint concreto e executável com lead time drasticamente reduzido e máximo fluxo de valor." },
+];
+
+function VSM() {
+  return (
+    <section id="vsm-&-lean" className="bg-black border-t border-white/5 py-28">
+      <div className="max-w-7xl mx-auto px-6">
+        <Section>
+          <motion.p variants={fadeUp} className="text-[#f97316] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            Sistema Toyota de Produção
+          </motion.p>
+          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
+            SHINGO VSM &amp; <em className="not-italic text-[#f97316]">ANÁLISE LEAN</em>
+          </motion.h2>
+          <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-3xl mb-6 leading-relaxed">
+            Realizamos uma análise profunda da sua fábrica usando o <strong className="text-white">Shingo VSM — Mapa do Fluxo de Valor Shingo</strong>, a ferramenta central do Sistema Toyota de Produção criada por <strong className="text-white">Shigeo Shingo</strong> — tornando cada perda, desperdício e ineficiência visível em todo o fluxo produtivo.
+          </motion.p>
+          <motion.p variants={fadeUp} custom={3} className="text-white/50 text-base max-w-3xl mb-10 leading-relaxed">
+            A partir do VSM, aplicamos <strong className="text-white">Análise de Pareto</strong> para ranquear e priorizar as maiores perdas, concentrando energia exatamente onde ela entrega os resultados mais rápidos e significativos.
+          </motion.p>
+        </Section>
+
+        <Section>
+          <motion.div variants={fadeUp} className="bg-[#f97316]/10 border-l-4 border-[#f97316] p-6 mb-10 max-w-xl">
+            <div className="text-white/60 text-sm uppercase tracking-widest mb-1">Nosso diagnóstico revela:</div>
+            <ul className="space-y-2 mt-3">
+              {[
+                "Falhas de Sincronismo de Produção — etapas fora de ritmo",
+                "Perdas por Espera — operadores, máquinas e materiais esperando",
+                "Layout Ineficiente — movimentação desnecessária e transporte longo",
+                "Superprodução & WIP Excessivo — escondendo problemas reais",
+                "Retrabalho & Defeitos — falhas de qualidade que destroem o lead time",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-sm text-white/60">
+                  <FiCheckCircle className="text-[#f97316] mt-0.5 shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </Section>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 mb-16">
+          {vsmCards.map((c, i) => (
+            <Section key={i}>
+              <motion.div variants={fadeUp} custom={i} className="bg-black p-8 hover:bg-[#0a0a0a] transition-colors h-full">
+                <c.icon className="text-[#f97316] mb-4" size={22} />
+                <h3 className="text-white font-bold uppercase tracking-tight mb-3">{c.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{c.desc}</p>
+              </motion.div>
+            </Section>
+          ))}
+        </div>
+
+        <Section>
+          <motion.div variants={fadeUp} className="text-center">
+            <div className="text-5xl md:text-7xl font-black text-[#f97316]">40–70%</div>
+            <div className="text-white/50 text-sm uppercase tracking-widest mt-2">Redução Típica de Lead Time por Engajamento</div>
+          </motion.div>
+        </Section>
+      </div>
+    </section>
+  );
+}
+
+/* ── Automation Philosophy ── */
+function AutomationPhilosophy() {
+  const steps = [
+    { num: "01", icon: FiMapPin, title: "Mapear & Expor", desc: "Shingo VSM revela cada perda e fluxo quebrado no seu processo atual" },
+    { num: "02", icon: FiTarget, title: "Simplificar Primeiro", desc: "TOC + Lean eliminam desperdícios, sincronizam o fluxo e enxugam ao máximo" },
+    { num: "03", icon: FiCpu, title: "Só Então Automatizar", desc: "Agora automatizamos — um processo limpo, enxuto e otimizado — multiplicando a eficiência, nunca travando desperdícios" },
+  ];
+  return (
+    <section className="bg-[#050505] border-t border-white/5 py-28">
+      <div className="max-w-7xl mx-auto px-6">
+        <Section>
+          <motion.p variants={fadeUp} className="text-[#f97316] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            Nossa Filosofia de Automação
+          </motion.p>
+          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-12">
+            NÃO AUTOMATIZE{" "}
+            <em className="not-italic text-[#f97316]">DESPERDÍCIOS.</em>
+            <br />
+            AUTOMATIZE{" "}
+            <em className="not-italic text-[#f97316]">PROCESSOS ENXUTOS.</em>
+          </motion.h2>
+        </Section>
+
+        <div className="grid md:grid-cols-3 gap-px bg-white/5 mb-14">
+          {steps.map((s, i) => (
+            <Section key={i}>
+              <motion.div variants={fadeUp} custom={i} className="bg-[#050505] p-10 relative h-full">
+                <div className="text-[#f97316]/20 text-8xl font-black absolute top-6 right-6 leading-none select-none">{s.num}</div>
+                <s.icon className="text-[#f97316] mb-5" size={24} />
+                <h3 className="text-white font-bold text-xl uppercase tracking-tight mb-3">{s.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
+                {i < steps.length - 1 && (
+                  <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-[#f97316]">
+                    <FiArrowRight size={20} />
+                  </div>
+                )}
+              </motion.div>
+            </Section>
+          ))}
+        </div>
+
+        <Section>
+          <motion.p variants={fadeUp} className="text-white/50 text-base max-w-3xl leading-relaxed border-l-4 border-[#f97316] pl-6">
+            Poucas empresas no mundo aplicam essa sequência. A maioria automatiza primeiro — e incorpora permanentemente suas ineficiências em máquinas caras.{" "}
+            <strong className="text-white">Nós automatizamos processos enxutos. Nunca perdas.</strong>
+          </motion.p>
+        </Section>
+      </div>
+    </section>
+  );
+}
+
+/* ── TOC ── */
+const tocSteps = [
+  { icon: FiCrosshair, title: "Identificar a Restrição", desc: "Mapeamos toda a sua operação para encontrar o único gargalo que limita o throughput do sistema — o elo mais fraco da cadeia." },
+  { icon: FiMaximize, title: "Explorar a Restrição", desc: "Antes de adicionar recursos, extraímos o máximo desempenho da restrição com zero investimento adicional." },
+  { icon: FiLayers, title: "Subordinar Tudo ao Resto", desc: "Todos os outros processos se alinham para apoiar a restrição. Paramos de otimizar não-gargalos que criam eficiência falsa." },
+  { icon: FiZap, title: "Elevar a Restrição", desc: "Quando necessário, investimos com precisão — automação, capacidade ou competência — para quebrar permanentemente o gargalo." },
+  { icon: FiRepeat, title: "Repetir & Acelerar", desc: "As restrições mudam conforme o desempenho melhora. Instalamos uma cultura de melhoria contínua que sustenta cada ganho." },
+];
+
+const throughputSteps = [
+  { label: "Entrada", pct: 85, warn: false },
+  { label: "Processamento", pct: 72, warn: false },
+  { label: "Solda", pct: 31, warn: true },
+  { label: "Montagem", pct: 68, warn: false },
+  { label: "Inspeção", pct: 79, warn: false },
+  { label: "Expedição", pct: 90, warn: false },
+];
+
+function TOC() {
+  return (
+    <section id="toc" className="bg-black border-t border-white/5 py-28">
+      <div className="max-w-7xl mx-auto px-6">
+        <Section>
+          <motion.p variants={fadeUp} className="text-[#f97316] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            Teoria das Restrições
+          </motion.p>
+          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-16">
+            A ABORDAGEM <em className="not-italic text-[#f97316]">TOC</em>
+          </motion.h2>
+        </Section>
+
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* Steps */}
+          <div className="space-y-0 divide-y divide-white/5">
+            {tocSteps.map((s, i) => (
+              <Section key={i}>
+                <motion.div variants={fadeUp} custom={i} className="flex gap-5 py-7 group hover:bg-white/2 transition-colors px-2">
+                  <div className="shrink-0 w-10 h-10 border border-[#f97316]/30 group-hover:border-[#f97316] group-hover:bg-[#f97316]/10 flex items-center justify-center transition-all">
+                    <s.icon className="text-[#f97316]" size={16} />
+                  </div>
+                  <div>
+                    <div className="text-[#f97316] text-xs font-bold tracking-widest mb-1">0{i + 1}</div>
+                    <h3 className="text-white font-bold uppercase tracking-tight mb-2">{s.title}</h3>
+                    <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
+                  </div>
+                </motion.div>
+              </Section>
             ))}
           </div>
-          
-          <div className="lg:col-span-7 flex flex-col justify-center">
-            <div className="bg-[#050505] p-8 border border-white/10">
-              <h4 className="text-white font-bold uppercase tracking-wide mb-8 text-center text-sm">Visualização de Throughput do Sistema</h4>
-              
-              <div className="flex flex-col gap-4">
-                {[
-                  { name: "Entrada", val: 85, color: "bg-white/20" },
-                  { name: "Processamento", val: 72, color: "bg-white/20" },
-                  { name: "Solda (Gargalo)", val: 31, color: "bg-primary", isWarning: true },
-                  { name: "Montagem", val: 68, color: "bg-white/20" },
-                  { name: "Inspeção", val: 79, color: "bg-white/20" },
-                  { name: "Expedição", val: 90, color: "bg-white/20" }
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4">
-                    <div className="w-32 text-right text-xs font-bold text-muted-foreground uppercase tracking-wider flex justify-end items-center gap-2">
-                      {item.isWarning && <span className="text-primary">⚠</span>}
-                      <span className={item.isWarning ? "text-primary" : ""}>{item.name}</span>
+
+          {/* Throughput Visual */}
+          <Section>
+            <motion.div variants={fadeUp} className="border border-white/10 p-8 h-fit sticky top-24">
+              <div className="text-white/40 text-xs uppercase tracking-widest mb-1">Análise de Throughput</div>
+              <div className="text-white font-black text-xl uppercase mb-6">ENCONTRE O <span className="text-[#f97316]">GARGALO</span></div>
+              <div className="space-y-4">
+                {throughputSteps.map((s) => (
+                  <div key={s.label}>
+                    <div className="flex justify-between text-xs mb-1.5">
+                      <span className={`font-medium uppercase tracking-wider ${s.warn ? "text-red-400" : "text-white/60"}`}>
+                        {s.warn && "⚠ "}{s.label}
+                      </span>
+                      <span className={s.warn ? "text-red-400 font-bold" : "text-white/40"}>{s.pct}%</span>
                     </div>
-                    <div className="flex-1 h-6 bg-white/5 relative">
-                      <motion.div 
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${item.val}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        className={`absolute top-0 left-0 h-full ${item.color}`} 
+                    <div className="h-1.5 bg-white/5 overflow-hidden">
+                      <div
+                        className={`h-full transition-all ${s.warn ? "bg-red-500" : "bg-[#f97316]/60"}`}
+                        style={{ width: `${s.pct}%` }}
                       />
-                    </div>
-                    <div className={`w-12 text-sm font-bold ${item.isWarning ? "text-primary" : "text-white"}`}>
-                      {item.val}%
                     </div>
                   </div>
                 ))}
               </div>
-              
-              <div className="mt-8 p-4 bg-primary/10 border border-primary/20 text-sm text-primary/90 font-medium">
-                <strong className="text-primary uppercase tracking-wide">Insight Operacional:</strong> Restrição identificada: Solda a 31% está limitando toda a linha. Corrigir este único ponto libera o throughput do sistema inteiro.
+              <div className="mt-6 pt-6 border-t border-white/10 text-sm text-white/50 leading-relaxed">
+                <strong className="text-white">Restrição identificada:</strong> Solda a 31% está limitando toda a linha. Corrigir este único ponto libera o throughput do sistema inteiro.
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </Section>
         </div>
       </div>
     </section>
   );
-};
+}
 
-const CompassSection = () => {
+/* ── Financial Compass ── */
+function FinancialCompass() {
+  const flow = ["Chão de Fábrica", "Bússola Financeira", "Engenharia", "Controle Financeiro"];
   return (
-    <section className="py-24 bg-[#0a0a0a] border-b border-white/5 relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-4">Inteligência Financeira</h2>
-          <h3 className="text-4xl md:text-5xl font-bold uppercase tracking-tight text-white mb-6">A Bússola Financeira</h3>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Metodologia CatLuc que conecta a Contabilidade de Ganhos TOC à Engenharia de Produto e Engenharia de Processo — o elo perdido entre o chão de fábrica e o controle financeiro.
-          </p>
-        </div>
+    <section className="bg-[#050505] border-t border-white/5 py-28">
+      <div className="max-w-7xl mx-auto px-6">
+        <Section>
+          <motion.p variants={fadeUp} className="text-[#f97316] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            Metodologia Pont Consultoria
+          </motion.p>
+          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
+            A <em className="not-italic text-[#f97316]">BÚSSOLA</em> FINANCEIRA
+          </motion.h2>
+          <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-2xl mb-12 leading-relaxed">
+            Uma metodologia que conecta a Contabilidade de Ganhos TOC à <strong className="text-white">Engenharia de Produto</strong> e <strong className="text-white">Engenharia de Processo</strong> — o elo perdido entre o chão de fábrica e o controle financeiro.
+          </motion.p>
+        </Section>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-16 opacity-80">
-          <div className="px-6 py-3 border border-white/20 bg-white/5 text-white font-bold text-sm uppercase tracking-wider">Chão de Fábrica</div>
-          <FiArrowRight className="text-primary w-6 h-6 rotate-90 md:rotate-0" />
-          <div className="px-6 py-3 border border-primary bg-primary/10 text-primary font-bold text-sm uppercase tracking-wider shadow-[0_0_15px_rgba(255,100,0,0.2)]">Bússola Financeira</div>
-          <FiArrowRight className="text-primary w-6 h-6 rotate-90 md:rotate-0" />
-          <div className="px-6 py-3 border border-white/20 bg-white/5 text-white font-bold text-sm uppercase tracking-wider">Engenharia</div>
-          <FiArrowRight className="text-primary w-6 h-6 rotate-90 md:rotate-0" />
-          <div className="px-6 py-3 border border-white/20 bg-white/5 text-white font-bold text-sm uppercase tracking-wider">Controle Financeiro</div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {[
-            { title: "Lucratividade Real", desc: "Revele a verdadeira margem de cada produto baseado no consumo da restrição." },
-            { title: "Mix Ótimo de Produtos", desc: "Determine exatamente o que produzir e quando para maximizar o ganho da empresa." },
-            { title: "Estratégia de Preços", desc: "Decisões de vendas baseadas em dados operacionais reais, não em custos teóricos." }
-          ].map((item, i) => (
-            <div key={i} className="text-center p-8 border border-white/5 bg-background">
-              <h4 className="text-xl font-bold text-white uppercase mb-4">{item.title}</h4>
-              <p className="text-muted-foreground text-sm">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="max-w-4xl mx-auto text-center p-8 border border-white/10 bg-white/[0.02]">
-          <p className="text-white/80 italic font-medium">
-            "Aplicado em fabricação de metais, automotivo, equipamentos industriais e eletrônica — a Bússola Financeira revela consistentemente que o mix de produtos mais lucrativo não é o que a contabilidade tradicional de custos prevê."
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const IndustriesSection = () => {
-  const industries = [
-    { name: "Metal & Ferraria", tags: "Corte laser, solda, CNC, prensa-dobradeira" },
-    { name: "Automotivo", tags: "Linhas de montagem, estampagem, fornecedores tier" },
-    { name: "Aeroespacial", tags: "Fabricação de alta precisão, automação de inspeção" },
-    { name: "Equipamentos Industriais", tags: "Construtores de máquinas customizadas, OEMs" },
-    { name: "Produtos de Construção", tags: "Aço estrutural, edifício modular, pré-fabricados" },
-    { name: "Fabricação de Eletrônicos", tags: "Montagem de PCB, integração eletromecânica" }
-  ];
-
-  return (
-    <section className="py-24 bg-background border-b border-white/5">
-      <div className="container mx-auto px-6">
-        <h3 className="text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mb-12 text-center">Indústrias Atendidas</h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {industries.map((ind, i) => (
-            <div key={i} className="p-6 border border-white/10 bg-[#050505] hover:border-primary/30 transition-colors group">
-              <h4 className="text-lg font-bold text-white uppercase tracking-wide mb-2 group-hover:text-primary transition-colors">{ind.name}</h4>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider">{ind.tags}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const WhyUsSection = () => {
-  const reasons = [
-    { title: "Expertise Técnica e de Negócios", desc: "Combinação rara de consultoria estratégica e automação industrial hands-on. Não apenas aconselhamos — implementamos." },
-    { title: "Simplificar Antes de Automatizar", desc: "Nunca automatizamos perdas. Primeiro eliminamos desperdícios com Shingo VSM e TOC, depois automatizamos processos enxutos." },
-    { title: "TOC + Sistema Toyota Comprovados", desc: "Dois dos métodos operacionais mais poderosos combinados — entregando resultados mensuráveis em 90 dias ou menos." },
-    { title: "A Bússola Financeira", desc: "Nossa metodologia conecta o chão de fábrica à engenharia de produto, engenharia de processo e controle financeiro." },
-    { title: "Agnósticos em Tecnologia", desc: "Recomendamos o que é certo para sua situação — laser, CNC, visão, robótica — não o que somos pagos para vender." }
-  ];
-
-  return (
-    <section className="py-24 bg-[#050505] border-b border-white/5">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-          <div className="lg:col-span-1">
-            <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-4">Vantagem Competitiva</h2>
-            <h3 className="text-4xl md:text-5xl font-bold uppercase tracking-tight text-white mb-6">Por que Escolher CatLuc</h3>
-            <div className="w-20 h-2 bg-primary mb-8" />
-            <p className="text-muted-foreground">
-              A diferença entre um conselho teórico e resultados operacionais tangíveis que impactam diretamente o seu P&L.
-            </p>
-          </div>
-          
-          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
-            {reasons.map((r, i) => (
-              <div key={i} className="flex gap-4">
-                <span className="text-2xl font-black text-white/10 mt-[-4px]">{`0${i+1}`}</span>
-                <div>
-                  <h4 className="text-white font-bold uppercase tracking-wide text-sm mb-2">{r.title}</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{r.desc}</p>
+        <Section>
+          <motion.div variants={fadeUp} className="flex flex-col md:flex-row items-center gap-0 mb-16 overflow-x-auto">
+            {flow.map((label, i) => (
+              <React.Fragment key={label}>
+                <div className={`shrink-0 px-6 py-4 border font-bold text-sm uppercase tracking-wider whitespace-nowrap ${i === 1 ? "border-[#f97316] bg-[#f97316]/10 text-[#f97316]" : "border-white/20 bg-white/5 text-white"}`}>
+                  {label}
                 </div>
-              </div>
+                {i < flow.length - 1 && (
+                  <FiArrowRight className="text-[#f97316] shrink-0 rotate-90 md:rotate-0 my-1 md:my-0 mx-0 md:mx-1" size={16} />
+                )}
+              </React.Fragment>
             ))}
-          </div>
+          </motion.div>
+        </Section>
+
+        <div className="grid md:grid-cols-3 gap-px bg-white/5">
+          {[
+            { title: "Lucratividade Real do Produto", desc: "Quais produtos geram o maior ganho real através da restrição — não apenas a margem contábil." },
+            { title: "Mix Ótimo de Produtos", desc: "O mix ideal para maximizar o throughput total dadas as restrições de capacidade atuais." },
+            { title: "Estratégia de Preços e Vendas", desc: "Orienta precificação e prioridades de vendas com base na economia real da restrição." },
+          ].map((c, i) => (
+            <Section key={i}>
+              <motion.div variants={fadeUp} custom={i} className="bg-[#050505] p-8 h-full hover:bg-[#0a0a0a] transition-colors">
+                <div className="w-2 h-2 bg-[#f97316] rounded-full mb-5" />
+                <h3 className="text-white font-bold uppercase tracking-tight mb-3">{c.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{c.desc}</p>
+              </motion.div>
+            </Section>
+          ))}
         </div>
       </div>
     </section>
   );
-};
+}
 
-const QuoteSection = () => {
+/* ── Industries ── */
+const industries = [
+  { icon: FiSettings, title: "Metal & Ferraria", desc: "Corte a laser, solda, usinagem CNC e operações de prensa-dobradeira." },
+  { icon: FiActivity, title: "Automotivo", desc: "Linhas de montagem, plantas de estampagem, fornecedores tier — melhoria rápida de throughput." },
+  { icon: FiTarget, title: "Aeroespacial", desc: "Fabricação de alta precisão e automação de inspeção para ambientes AS9100." },
+  { icon: FiCpu, title: "Equipamentos Industriais", desc: "Construtores de máquinas customizadas, OEMs e montagem industrial — projetado para fluxo." },
+  { icon: FiLayers, title: "Produtos de Construção", desc: "Aço estrutural, edifício modular e otimização de manufatura pré-fabricada." },
+  { icon: FiZap, title: "Fabricação de Eletrônicos", desc: "Montagem de PCB, integração eletromecânica e automação guiada por visão." },
+];
+
+function Industries() {
   return (
-    <section className="py-32 bg-primary relative overflow-hidden">
-      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 text-[400px] text-black/5 leading-none font-serif">"</div>
-      <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
-        <blockquote className="text-3xl md:text-5xl font-bold uppercase tracking-tight text-[#0a0a0a] leading-tight mb-8">
-          "Todo sistema tem uma restrição. Toda restrição é uma oportunidade. Existimos para transformar sua maior limitação na sua maior vantagem competitiva."
-        </blockquote>
-        <cite className="text-[#0a0a0a] font-bold text-sm tracking-widest uppercase not-italic">
-          — CatLuc Consulting
-        </cite>
+    <section id="indústrias" className="bg-black border-t border-white/5 py-28">
+      <div className="max-w-7xl mx-auto px-6">
+        <Section>
+          <motion.p variants={fadeUp} className="text-[#f97316] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            Quem Atendemos
+          </motion.p>
+          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
+            INDÚSTRIAS <em className="not-italic text-[#f97316]">ALVO</em>
+          </motion.h2>
+          <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-2xl mb-16">
+            Expertise profunda em manufatura e setores industriais com métodos comprovados que se traduzem entre verticais.
+          </motion.p>
+        </Section>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
+          {industries.map((ind, i) => (
+            <Section key={i}>
+              <motion.div variants={fadeUp} custom={i} className="bg-black p-8 hover:bg-[#0a0a0a] transition-colors group h-full">
+                <ind.icon className="text-[#f97316] mb-5" size={22} />
+                <h3 className="text-white font-bold uppercase tracking-tight mb-3 group-hover:text-[#f97316] transition-colors">{ind.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{ind.desc}</p>
+              </motion.div>
+            </Section>
+          ))}
+        </div>
       </div>
     </section>
   );
-};
+}
 
-const ContactSection = () => {
+/* ── Why Choose ── */
+const differentiators = [
+  { num: "01", title: "Expertise Técnica e de Negócios", desc: "Combinação rara de consultoria estratégica e automação industrial hands-on. Não apenas aconselhamos — implementamos." },
+  { num: "02", title: "Simplificar Antes de Automatizar", desc: "Nunca automatizamos perdas. Primeiro eliminamos desperdícios com Shingo VSM e TOC, depois automatizamos processos enxutos." },
+  { num: "03", title: "TOC + Sistema Toyota Comprovados", desc: "Dois dos métodos operacionais mais poderosos combinados — entregando resultados mensuráveis em 90 dias ou menos." },
+  { num: "04", title: "A Bússola Financeira", desc: "Nossa metodologia conecta o chão de fábrica à engenharia de produto, engenharia de processo e controle financeiro." },
+  { num: "05", title: "Agnósticos em Tecnologia", desc: "Recomendamos o que é certo para a sua situação — laser, CNC, visão, robótica — não o que somos pagos para vender." },
+];
+
+function WhyChoose() {
   return (
-    <section className="py-24 bg-background relative" id="contato">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div>
-            <h3 className="text-4xl md:text-5xl font-bold uppercase tracking-tight text-white mb-4">Vamos Falar Sobre O Seu Desafio</h3>
-            <p className="text-muted-foreground text-lg mb-12">
-              Conte-nos sobre sua operação e retornaremos em até 24 horas. Sem compromisso — apenas uma conversa.
+    <section className="bg-[#050505] border-t border-white/5 py-28">
+      <div className="max-w-7xl mx-auto px-6">
+        <Section>
+          <motion.p variants={fadeUp} className="text-[#f97316] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            Nossos Diferenciais
+          </motion.p>
+          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-16">
+            POR QUE ESCOLHER A <em className="not-italic text-[#f97316]">PONT</em>
+          </motion.h2>
+        </Section>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
+          {differentiators.map((d, i) => (
+            <Section key={i}>
+              <motion.div variants={fadeUp} custom={i} className={`bg-[#050505] p-8 hover:bg-[#0a0a0a] transition-colors h-full ${i === differentiators.length - 1 && differentiators.length % 3 !== 0 ? "md:col-span-2 lg:col-span-1" : ""}`}>
+                <div className="text-[#f97316] font-black text-3xl mb-5 opacity-40">{d.num}</div>
+                <h3 className="text-white font-bold uppercase tracking-tight mb-3">{d.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{d.desc}</p>
+              </motion.div>
+            </Section>
+          ))}
+        </div>
+
+        {/* Quote */}
+        <Section>
+          <motion.blockquote variants={fadeUp} className="mt-20 border-l-4 border-[#f97316] pl-8 max-w-3xl">
+            <p className="text-2xl md:text-3xl text-white font-bold italic leading-snug mb-4">
+              "Todo sistema tem uma restrição. Toda restrição é uma oportunidade. Existimos para transformar sua maior limitação na sua maior vantagem competitiva."
             </p>
-            
-            <div className="space-y-6">
-              <div className="flex items-center gap-4 text-white/80">
-                <FiMail className="w-5 h-5 text-primary" />
-                <span className="font-mono text-sm">contact@catlucconsulting.com</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="bg-[#050505] p-8 border border-white/10">
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-white/50 uppercase tracking-widest">Nome</label>
-                <input 
-                  type="text" 
-                  className="w-full bg-background border border-white/10 p-3 text-white focus:border-primary focus:outline-none transition-colors"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-white/50 uppercase tracking-widest">Email</label>
-                <input 
-                  type="email" 
-                  className="w-full bg-background border border-white/10 p-3 text-white focus:border-primary focus:outline-none transition-colors"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-white/50 uppercase tracking-widest">Empresa</label>
-                <input 
-                  type="text" 
-                  className="w-full bg-background border border-white/10 p-3 text-white focus:border-primary focus:outline-none transition-colors"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-white/50 uppercase tracking-widest">Mensagem</label>
-                <textarea 
-                  rows={4}
-                  className="w-full bg-background border border-white/10 p-3 text-white focus:border-primary focus:outline-none transition-colors resize-none"
-                />
-              </div>
-              <button 
-                type="submit"
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold uppercase tracking-widest py-4 transition-colors"
-              >
-                Enviar Mensagem
-              </button>
-            </form>
-          </div>
+            <cite className="text-white/40 text-sm uppercase tracking-widest not-italic">Pont Consultoria — Crença Central</cite>
+          </motion.blockquote>
+        </Section>
+      </div>
+    </section>
+  );
+}
+
+/* ── Contact ── */
+function Contact() {
+  const [sent, setSent] = useState(false);
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSent(true);
+  }
+  return (
+    <section id="contato" className="bg-black border-t border-white/5 py-28">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16">
+          <Section>
+            <motion.p variants={fadeUp} className="text-[#f97316] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+              Entre em Contato
+            </motion.p>
+            <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-6">
+              VAMOS FALAR SOBRE O SEU <em className="not-italic text-[#f97316]">DESAFIO</em>
+            </motion.h2>
+            <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg mb-10 leading-relaxed">
+              Conte-nos sobre sua operação e retornaremos em até 24 horas. Sem compromisso — apenas uma conversa.
+            </motion.p>
+            <motion.div variants={fadeUp} custom={3} className="flex items-center gap-4">
+              <FiMail className="text-[#f97316]" size={20} />
+              <a href="mailto:contato@pontconsultoria.com.br" className="text-white/70 hover:text-white transition-colors font-mono text-sm">
+                contato@pontconsultoria.com.br
+              </a>
+            </motion.div>
+          </Section>
+
+          <Section>
+            <motion.div variants={fadeUp} className="border border-white/10 p-8">
+              {sent ? (
+                <div className="text-center py-10">
+                  <FiCheckCircle className="text-[#f97316] mx-auto mb-4" size={40} />
+                  <h3 className="text-white font-bold text-xl uppercase mb-2">Mensagem Enviada!</h3>
+                  <p className="text-white/50 text-sm">Retornaremos em até 24 horas.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  {[
+                    { id: "nome", label: "Nome", type: "text", placeholder: "Seu nome completo" },
+                    { id: "email", label: "E-mail", type: "email", placeholder: "seu@email.com" },
+                    { id: "empresa", label: "Empresa", type: "text", placeholder: "Nome da empresa" },
+                  ].map((f) => (
+                    <div key={f.id}>
+                      <label className="block text-white/60 text-xs uppercase tracking-widest mb-2">{f.label}</label>
+                      <input
+                        type={f.type}
+                        placeholder={f.placeholder}
+                        className="w-full bg-white/5 border border-white/10 focus:border-[#f97316] text-white placeholder:text-white/20 px-4 py-3 text-sm outline-none transition-colors"
+                        required
+                      />
+                    </div>
+                  ))}
+                  <div>
+                    <label className="block text-white/60 text-xs uppercase tracking-widest mb-2">Mensagem</label>
+                    <textarea
+                      rows={4}
+                      placeholder="Descreva sua operação e o principal desafio que enfrenta..."
+                      className="w-full bg-white/5 border border-white/10 focus:border-[#f97316] text-white placeholder:text-white/20 px-4 py-3 text-sm outline-none transition-colors resize-none"
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-[#f97316] hover:bg-orange-500 text-black font-bold py-4 text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+                  >
+                    Enviar Mensagem <FiArrowRight />
+                  </button>
+                </form>
+              )}
+            </motion.div>
+          </Section>
         </div>
       </div>
     </section>
   );
-};
+}
 
-const Footer = () => (
-  <footer className="bg-[#050505] border-t border-white/5 py-8 text-center">
-    <div className="container mx-auto px-6">
-      <div className="flex items-center justify-center gap-2 mb-4">
-        <span className="w-2 h-2 bg-primary rounded-full" />
-        <span className="text-white font-bold tracking-widest uppercase text-sm">CatLuc Consulting</span>
-      </div>
-      <p className="text-white/30 text-xs uppercase tracking-wider">
-        © 2025 CatLuc Consulting. Todos os direitos reservados.
-      </p>
-    </div>
-  </footer>
-);
-
-function Home() {
+/* ── Footer ── */
+function Footer() {
   return (
-    <div className="min-h-[100dvh] w-full bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
-      <HeroSection />
-      <ServicesSection />
-      <ShingoVSMSection />
-      <PhilosophySection />
-      <TOCSection />
-      <CompassSection />
-      <IndustriesSection />
-      <WhyUsSection />
-      <QuoteSection />
-      <ContactSection />
+    <footer className="bg-[#030303] border-t border-white/5 py-10">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <span className="font-bold text-white">
+          PONT <span className="text-[#f97316]">CONSULTORIA</span>
+        </span>
+        <p className="text-white/30 text-xs text-center">
+          © {new Date().getFullYear()} Pont Consultoria. Todos os direitos reservados.
+        </p>
+        <div className="flex gap-6">
+          {["Serviços", "Contato"].map((l) => (
+            <button
+              key={l}
+              onClick={() => document.getElementById(l.toLowerCase())?.scrollIntoView({ behavior: "smooth" })}
+              className="text-xs text-white/30 hover:text-white/60 uppercase tracking-wider transition-colors"
+            >
+              {l}
+            </button>
+          ))}
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+/* ── App ── */
+export default function App() {
+  return (
+    <div className="bg-black text-white min-h-screen">
+      <Navbar />
+      <Hero />
+      <Services />
+      <VSM />
+      <AutomationPhilosophy />
+      <TOC />
+      <FinancialCompass />
+      <Industries />
+      <WhyChoose />
+      <Contact />
       <Footer />
     </div>
   );
 }
-
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
-
-function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-          <Router />
-        </WouterRouter>
-        <Toaster />
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
-}
-
-export default App;
