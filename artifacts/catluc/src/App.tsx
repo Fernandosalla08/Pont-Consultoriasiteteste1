@@ -24,7 +24,7 @@ import {
   FiFlag,
 } from "react-icons/fi";
 
-const pontLogo = "/pont-logo.png";
+const pontLogo = "/pont-logo-orig.png";
 
 /* ── helpers ── */
 const fadeUp = {
@@ -59,7 +59,7 @@ function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <img src={pontLogo} alt="Pont Consultoria" className="h-12 w-auto" />
+        <img src={pontLogo} alt="Pont Consultoria" className="h-12 w-auto mix-blend-screen" />
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <button
@@ -694,7 +694,7 @@ function Footer() {
   return (
     <footer className="bg-[#030303] border-t border-white/5 py-10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        <img src={pontLogo} alt="Pont Consultoria" className="h-8 w-auto" />
+        <img src={pontLogo} alt="Pont Consultoria" className="h-8 w-auto mix-blend-screen" />
         <p className="text-white/30 text-xs text-center">
           © {new Date().getFullYear()} Pont Consultoria. Todos os direitos reservados.
         </p>
