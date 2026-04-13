@@ -24,8 +24,7 @@ import {
   FiFlag,
 } from "react-icons/fi";
 
-const pontLogoConsultoria = "/pont-logo-orig.png";
-const pontLogoAutomacao = "/pont-automacao-logo.png";
+const pontLogo = "/pont-logo-orig.png";
 
 /* ── helpers ── */
 const fadeUp = {
@@ -60,7 +59,7 @@ function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <img src={pontLogoConsultoria} alt="Pont Consultoria" className="h-12 w-auto mix-blend-screen" style={{ filter: "contrast(1.8) brightness(1.4)" }} />
+        <img src={pontLogo} alt="Pont Consultoria" className="h-12 w-auto mix-blend-screen" style={{ filter: "contrast(1.8) brightness(1.4)" }} />
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <button
@@ -695,7 +694,7 @@ function Footer() {
   return (
     <footer className="bg-[#030303] border-t border-white/5 py-10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        <img src={pontLogoConsultoria} alt="Pont Consultoria" className="h-8 w-auto mix-blend-screen" style={{ filter: "contrast(1.8) brightness(1.4)" }} />
+        <img src={pontLogo} alt="Pont Consultoria" className="h-8 w-auto mix-blend-screen" style={{ filter: "contrast(1.8) brightness(1.4)" }} />
         <p className="text-white/30 text-xs text-center">
           © {new Date().getFullYear()} Pont Consultoria. Todos os direitos reservados.
         </p>
@@ -715,129 +714,21 @@ function Footer() {
   );
 }
 
-/* ── SplashGate ── */
-function SplashGate({ onEnter }: { onEnter: () => void }) {
-  return (
-    <motion.div
-      className="fixed inset-0 z-[100] flex"
-      initial={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.5 } }}
-    >
-      {/* LEFT — Pont Automação */}
-      <a
-        href="https://www.pontautomacao.com.br"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative flex-1 flex flex-col items-center justify-center gap-8 bg-[#080808] border-r border-white/10 cursor-pointer group overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-[#f97316]/0 group-hover:bg-[#f97316]/5 transition-all duration-500" />
-        <motion.div
-          className="text-center px-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.6 } }}
-        >
-          <p className="text-white/40 text-xs tracking-[0.25em] uppercase mb-3">Soluções em</p>
-          <h2 className="text-white font-black text-3xl md:text-4xl uppercase tracking-tight leading-tight">
-            Engenharia<br />de Produto
-          </h2>
-        </motion.div>
-        <motion.div
-          className="flex flex-col items-center gap-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: 0.5, duration: 0.6 } }}
-        >
-          <svg className="w-8 h-10 text-white/50 group-hover:text-[#f97316] transition-colors duration-300" viewBox="0 0 24 30" fill="none">
-            <path d="M12 0 L12 22 M4 15 L12 25 L20 15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span className="text-white font-bold text-sm tracking-[0.2em] uppercase group-hover:text-[#f97316] transition-colors duration-300">Clique Aqui</span>
-        </motion.div>
-        <motion.div
-          className="flex items-center justify-center h-20 w-56"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0, transition: { delay: 0.7, duration: 0.6 } }}
-        >
-          <img
-            src={pontLogoAutomacao}
-            alt="Pont Automação"
-            className="max-h-full w-auto object-contain"
-            style={{ filter: "brightness(0) invert(1)", imageRendering: "crisp-edges" }}
-          />
-        </motion.div>
-      </a>
-
-      {/* DIVIDER */}
-      <div className="w-px bg-white/10 flex-shrink-0" />
-
-      {/* RIGHT — Pont Consultoria */}
-      <button
-        onClick={onEnter}
-        className="relative flex-1 flex flex-col items-center justify-center gap-8 bg-[#050505] cursor-pointer group overflow-hidden border-0"
-      >
-        <div className="absolute inset-0 bg-[#f97316]/0 group-hover:bg-[#f97316]/5 transition-all duration-500" />
-        <motion.div
-          className="text-center px-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.6 } }}
-        >
-          <p className="text-white/40 text-xs tracking-[0.25em] uppercase mb-3">Soluções em</p>
-          <h2 className="text-white font-black text-3xl md:text-4xl uppercase tracking-tight leading-tight">
-            Engenharia de<br />Processo e<br />Produção
-          </h2>
-        </motion.div>
-        <motion.div
-          className="flex flex-col items-center gap-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: 0.6, duration: 0.6 } }}
-        >
-          <svg className="w-8 h-10 text-white/50 group-hover:text-[#f97316] transition-colors duration-300" viewBox="0 0 24 30" fill="none">
-            <path d="M12 0 L12 22 M4 15 L12 25 L20 15" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span className="text-white font-bold text-sm tracking-[0.2em] uppercase group-hover:text-[#f97316] transition-colors duration-300">Permaneça nesse site</span>
-        </motion.div>
-        <motion.div
-          className="flex items-center justify-center h-20 w-56"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.6 } }}
-        >
-          <img
-            src={pontLogoConsultoria}
-            alt="Pont Consultoria"
-            className="max-h-full w-auto object-contain mix-blend-screen"
-            style={{ filter: "contrast(1.8) brightness(1.4)" }}
-          />
-        </motion.div>
-      </button>
-    </motion.div>
-  );
-}
-
 /* ── App ── */
 export default function App() {
-  const [showSplash, setShowSplash] = useState(true);
-
   return (
-    <>
-      {showSplash ? (
-        <SplashGate onEnter={() => setShowSplash(false)} />
-      ) : (
-        <motion.div
-          className="bg-black text-white min-h-screen"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { duration: 0.6 } }}
-        >
-          <Navbar />
-          <Hero />
-          <Services />
-          <VSM />
-          <AutomationPhilosophy />
-          <TOC />
-          <FinancialCompass />
-          <Industries />
-          <WhyChoose />
-          <Contact />
-          <Footer />
-        </motion.div>
-      )}
-    </>
+    <div className="bg-black text-white min-h-screen">
+      <Navbar />
+      <Hero />
+      <Services />
+      <VSM />
+      <AutomationPhilosophy />
+      <TOC />
+      <FinancialCompass />
+      <Industries />
+      <WhyChoose />
+      <Contact />
+      <Footer />
+    </div>
   );
 }
