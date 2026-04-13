@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import pontLogo from "@assets/image_1776085800660.png";
 import { motion, useInView } from "framer-motion";
 import {
   FiTrendingUp,
@@ -24,6 +23,8 @@ import {
   FiSliders,
   FiFlag,
 } from "react-icons/fi";
+
+const pontLogo = "/pont-logo.png";
 
 /* ── helpers ── */
 const fadeUp = {
