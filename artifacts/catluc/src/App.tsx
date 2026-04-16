@@ -148,9 +148,9 @@ function Hero() {
           className="flex flex-col sm:flex-row gap-6 sm:gap-16 mb-14"
         >
           {[
-            { value: "3X", label: "Ganho Médio de Throughput" },
+            { value: "3X", label: "Ganho Médio de OEE dos Equipamentos Gargalo" },
             { value: "60%", label: "Redução de Desperdícios" },
-            { value: "90D", label: "Retorno Rápido" },
+            { value: "90 Dias", label: "Retorno Rápido" },
           ].map((m) => (
             <div key={m.label} className="border-l-2 border-[#1E3272] pl-4">
               <div className="text-3xl font-black text-white">{m.value}</div>
