@@ -701,7 +701,7 @@ function Footer() {
           <p className="text-white font-bold text-sm uppercase tracking-widest text-center leading-relaxed">
             Soluções em<br />Engenharia de Produto
           </p>
-          <div className="flex flex-col items-center text-white/40 group-hover:text-[#1E3272] transition-colors duration-300">
+          <div className="flex flex-col items-center transition-colors duration-300" style={{ color: "#6B1035" }}>
             <svg width="48" height="56" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               {/* Block arrow outline — shaft + arrowhead */}
               <path
