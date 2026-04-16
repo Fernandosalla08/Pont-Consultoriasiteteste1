@@ -22,6 +22,9 @@ import {
   FiRotateCcw,
   FiSliders,
   FiFlag,
+  FiSun,
+  FiTruck,
+  FiPackage,
 } from "react-icons/fi";
 
 const pontLogo = "/pont-logo-v2.png";
@@ -519,6 +522,9 @@ const industries = [
   { icon: FiCpu, title: "Equipamentos Industriais", desc: "Construtores de máquinas customizadas, OEMs e montagem industrial — projetado para fluxo." },
   { icon: FiLayers, title: "Produtos de Construção", desc: "Aço estrutural, edifício modular e otimização de manufatura pré-fabricada." },
   { icon: FiZap, title: "Fabricação de Eletrônicos", desc: "Montagem de PCB, integração eletromecânica e automação guiada por visão." },
+  { icon: FiSun, title: "Implementos Agrícolas", desc: "Colheitadeiras, plantadeiras, pulverizadores e implementos de solo — fluxo contínuo e qualidade para o agronegócio." },
+  { icon: FiTruck, title: "Implementos Rodoviários", desc: "Reboques, semirreboques e carrocerias para transporte — linhas de montagem otimizadas e lead time reduzido." },
+  { icon: FiPackage, title: "Indústria Alimentícia", desc: "Processamento, embalagem e conservação de alimentos — eficiência operacional com rigor em qualidade e segurança alimentar." },
 ];
 
 function Industries() {
