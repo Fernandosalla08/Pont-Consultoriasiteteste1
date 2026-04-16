@@ -717,7 +717,7 @@ function Footer() {
             Clique aqui
           </p>
           <img
-            src="/pont-automacao-final.png"
+            src="/pont-automacao-recolored.png"
             alt="Pont Automação"
             className="h-40 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300"
           />
