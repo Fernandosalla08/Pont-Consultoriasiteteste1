@@ -314,7 +314,7 @@ function VSM() {
         <Section>
           <motion.div variants={fadeUp} className="text-center">
             <div className="text-5xl md:text-7xl font-black text-[#1E3272]">40–70%</div>
-            <div className="text-white/50 text-sm uppercase tracking-widest mt-2">Redução Típica de Lead Time por Engajamento</div>
+            <div className="text-white/50 text-sm uppercase tracking-widest mt-2">Redução Típica de Lead Time por Iniciativa</div>
           </motion.div>
         </Section>
       </div>
