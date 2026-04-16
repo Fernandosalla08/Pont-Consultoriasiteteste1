@@ -701,6 +701,11 @@ function Footer() {
           <p className="text-white font-bold text-sm uppercase tracking-widest text-center leading-relaxed">
             Soluções em<br />Engenharia de Produto
           </p>
+          <img
+            src="/pont-automacao-infografico.png"
+            alt="Infográfico Pont Automação"
+            className="w-full max-w-4xl rounded-lg mt-4 mb-2 opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+          />
           <div className="flex flex-col items-center transition-colors duration-300" style={{ color: "#6B1035" }}>
             <svg width="48" height="56" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               {/* Block arrow outline — shaft + arrowhead */}
