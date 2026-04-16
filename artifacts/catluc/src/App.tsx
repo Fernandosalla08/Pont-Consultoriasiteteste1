@@ -138,7 +138,7 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="text-white/60 text-lg md:text-xl max-w-2xl leading-relaxed mb-14"
         >
-          Transformamos negócios de forma mensurável utilizando a Teoria das Restrições e o Sistema Toyota de Produção — combinados com automação industrial de ponta.
+          Transformamos a sua indústria utilizando a Teoria das Restrições e o Sistema Toyota de Produção.
         </motion.p>
 
         <motion.div
