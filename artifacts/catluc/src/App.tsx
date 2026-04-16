@@ -749,9 +749,9 @@ export default function App() {
       <Hero />
       <Services />
       <VSM />
-      <AutomationPhilosophy />
       <TOC />
       <FinancialCompass />
+      <AutomationPhilosophy />
       <Industries />
       <WhyChoose />
       <Contact />
