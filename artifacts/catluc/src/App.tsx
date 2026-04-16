@@ -108,16 +108,6 @@ function Navbar() {
 function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#2c2c2c] pt-16">
-      {/* grid overlay */}
-      <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/20 to-black pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
         <motion.p
