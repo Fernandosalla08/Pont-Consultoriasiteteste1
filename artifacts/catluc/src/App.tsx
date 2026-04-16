@@ -205,12 +205,6 @@ const services = [
     desc: "Design de produção Lean e baseado em fluxo sob medida para a sua indústria. Otimizamos layout, fluxo de material, programação e planejamento de mão de obra.",
     tags: ["Manufatura Enxuta", "Design de Fluxo", "Kaizen"],
   },
-  {
-    icon: FiSettings,
-    title: "Automação Industrial",
-    desc: "Soluções de automação turnkey integrando robôs, CLPs e interfaces IHM para aumentar velocidade, precisão e confiabilidade no chão de fábrica.",
-    tags: ["Robótica", "CLP / IHM", "Integração de Sistemas"],
-  },
 ];
 
 function Services() {
