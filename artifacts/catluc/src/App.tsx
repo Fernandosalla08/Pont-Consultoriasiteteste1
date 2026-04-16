@@ -717,10 +717,9 @@ function Footer() {
             Clique aqui
           </p>
           <img
-            src="/pont-automacao-vinho-transparent.png"
+            src="/pont-automacao-final.png"
             alt="Pont Automação"
             className="h-40 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-            style={{ filter: "brightness(0) invert(1) sepia(1) hue-rotate(295deg) saturate(6) brightness(0.65)" }}
           />
         </a>
       </div>
