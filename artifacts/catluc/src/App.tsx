@@ -513,7 +513,7 @@ function FinancialCompass() {
 
 /* ── Industries ── */
 const industries = [
-  { icon: FiSettings, title: "Metal & Ferraria", desc: "Solda, usinagem e operações de prensa-dobradeira." },
+  { icon: FiSettings, title: "Metal Mecânico", desc: "Usinagem, torneamento, fresamento e operações de conformação metálica em série." },
   { icon: FiActivity, title: "Automotivo", desc: "Linhas de montagem, plantas de estampagem, fornecedores tier — melhoria rápida de throughput." },
   { icon: FiTarget, title: "Aeroespacial", desc: "Fabricação de alta precisão e automação de inspeção para ambientes AS9100." },
   { icon: FiCpu, title: "Equipamentos Industriais", desc: "Construtores de máquinas customizadas, OEMs e montagem industrial — projetado para fluxo." },
