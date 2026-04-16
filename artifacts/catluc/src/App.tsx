@@ -81,7 +81,7 @@ function Navbar() {
           ))}
           <button
             onClick={() => scrollTo("contato")}
-            className="text-sm bg-[#1E3272] hover:bg-[#1E3272] text-black font-bold px-5 py-2 transition-colors uppercase tracking-wider"
+            className="text-sm bg-[#1E3272] hover:bg-[#1E3272] text-white font-bold px-5 py-2 transition-colors uppercase tracking-wider"
           >
             Fale Conosco
           </button>
