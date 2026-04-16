@@ -761,8 +761,8 @@ export default function App() {
       <AutomationPhilosophy />
       <Industries />
       <WhyChoose />
-      <Contact />
       <Footer />
+      <Contact />
     </div>
   );
 }
