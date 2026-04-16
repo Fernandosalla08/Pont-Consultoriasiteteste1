@@ -717,9 +717,9 @@ function Footer() {
             Clique aqui
           </p>
           <img
-            src="/pont-automacao-logo.png"
+            src="/pont-automacao-vinho-transparent.png"
             alt="Pont Automação"
-            className="h-40 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+            className="h-40 w-auto opacity-80 group-hover:opacity-100 transition-opacity duration-300"
           />
         </a>
       </div>
