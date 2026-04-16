@@ -565,6 +565,7 @@ const differentiators = [
   { num: "3", title: "Teoria das Restrições + Sistema Toyota Comprovados", desc: "Dois dos métodos operacionais mais poderosos combinados — entregando resultados mensuráveis em 90 dias ou menos." },
   { num: "4", title: "A Bússola Financeira", desc: "Nossa metodologia conecta o chão de fábrica à engenharia de produto, engenharia de processo e controle financeiro." },
   { num: "5", title: "Agnósticos em Tecnologia", desc: "Recomendamos o que é certo para a sua situação — robótica, automação, sistemas industriais — não o que somos pagos para vender." },
+  { num: "6", title: "Prática Hands-On", desc: "Entendemos que se a teoria estiver diferente da prática, então a teoria está errada. As coisas precisam funcionar na fábrica — não apenas no papel." },
 ];
 
 function WhyChoose() {
