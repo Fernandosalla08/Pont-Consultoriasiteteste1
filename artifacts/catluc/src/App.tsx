@@ -719,7 +719,8 @@ function Footer() {
           <img
             src="/pont-automacao-vinho-transparent.png"
             alt="Pont Automação"
-            className="h-40 w-auto opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+            className="h-40 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+            style={{ filter: "grayscale(1) sepia(1) hue-rotate(-30deg) saturate(3) brightness(2.2)" }}
           />
         </a>
       </div>
