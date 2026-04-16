@@ -24,7 +24,7 @@ import {
   FiFlag,
 } from "react-icons/fi";
 
-const pontLogo = "/pont-logo-transparent.png";
+const pontLogo = "/pont-logo-v2.png";
 
 /* ── helpers ── */
 const fadeUp = {
