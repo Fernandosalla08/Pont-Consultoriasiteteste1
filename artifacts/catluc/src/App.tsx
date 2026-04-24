@@ -66,7 +66,7 @@ function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#111827]/90 backdrop-blur-sm border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-48">
         <img src={pontLogo} alt="Pont Consultoria" className="h-44 w-auto" />
         <nav className="hidden md:flex items-center gap-8">
@@ -91,7 +91,7 @@ function Navbar() {
         </button>
       </div>
       {open && (
-        <div className="md:hidden bg-[#111827] border-t border-white/10 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-black/60 backdrop-blur-md border-t border-white/10 px-6 py-4 flex flex-col gap-4">
           {links.map((l) => (
             <button
               key={l.id}
@@ -110,7 +110,7 @@ function Navbar() {
 /* ── Hero ── */
 function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#111827] pt-48">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-transparent pt-48">
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
         <motion.p
@@ -212,7 +212,7 @@ const services = [
 
 function Services() {
   return (
-    <section id="serviços" className="bg-[#111827] border-t border-white/5 py-28">
+    <section id="serviços" className="bg-transparent border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
@@ -232,7 +232,7 @@ function Services() {
               <motion.div
                 variants={fadeUp}
                 custom={i}
-                className="bg-[#111827] p-8 hover:bg-[#0f0f0f] transition-colors group h-full"
+                className="bg-transparent p-8 hover:bg-[#0f0f0f] transition-colors group h-full"
               >
                 <div className="w-12 h-12 border border-[#2A3E7C]/40 flex items-center justify-center mb-6 group-hover:border-[#2A3E7C] group-hover:bg-[#2A3E7C]/10 transition-all">
                   <s.icon className="text-[#2A3E7C]" size={20} />
@@ -265,7 +265,7 @@ const vsmCards = [
 
 function VSM() {
   return (
-    <section id="vsm-&-lean" className="bg-[#111827] border-t border-white/5 py-28">
+    <section id="vsm-&-lean" className="bg-transparent border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
@@ -305,7 +305,7 @@ function VSM() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 mb-16">
           {vsmCards.map((c, i) => (
             <Section key={i}>
-              <motion.div variants={fadeUp} custom={i} className="bg-[#111827] p-8 hover:bg-[#111827] transition-colors h-full">
+              <motion.div variants={fadeUp} custom={i} className="bg-transparent p-8 hover:bg-transparent transition-colors h-full">
                 <c.icon className="text-[#2A3E7C] mb-4" size={22} />
                 <h3 className="text-white font-bold uppercase tracking-tight mb-3">{c.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{c.desc}</p>
@@ -333,7 +333,7 @@ function AutomationPhilosophy() {
     { num: "3", icon: FiCpu, title: "Só Então Automatizar", desc: "Agora automatizamos — um processo limpo, enxuto e otimizado — multiplicando a eficiência, nunca travando desperdícios" },
   ];
   return (
-    <section className="bg-[#111827] border-t border-white/5 py-28">
+    <section className="bg-transparent border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
@@ -351,7 +351,7 @@ function AutomationPhilosophy() {
         <div className="grid md:grid-cols-3 gap-px bg-white/5 mb-14">
           {steps.map((s, i) => (
             <Section key={i}>
-              <motion.div variants={fadeUp} custom={i} className="bg-[#111827] p-10 relative h-full">
+              <motion.div variants={fadeUp} custom={i} className="bg-transparent p-10 relative h-full">
                 <div className="text-[#2A3E7C]/60 text-8xl font-black absolute top-6 right-6 leading-none select-none">{s.num}</div>
                 <s.icon className="text-[#2A3E7C] mb-5" size={24} />
                 <h3 className="text-white font-bold text-xl uppercase tracking-tight mb-3">{s.title}</h3>
@@ -397,7 +397,7 @@ const throughputSteps = [
 
 function TOC() {
   return (
-    <section id="toc" className="bg-[#111827] border-t border-white/5 py-28">
+    <section id="toc" className="bg-transparent border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
@@ -465,7 +465,7 @@ function TOC() {
 function FinancialCompass() {
   const flow = ["Chão de Fábrica", "Bússola Financeira", "Engenharia", "Controle Financeiro"];
   return (
-    <section className="bg-[#111827] border-t border-white/5 py-28">
+    <section className="bg-transparent border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
@@ -501,7 +501,7 @@ function FinancialCompass() {
             { title: "Estratégia de Preços e Vendas", desc: "Orienta precificação e prioridades de vendas com base na economia real da restrição." },
           ].map((c, i) => (
             <Section key={i}>
-              <motion.div variants={fadeUp} custom={i} className="bg-[#111827] p-8 h-full hover:bg-[#111827] transition-colors">
+              <motion.div variants={fadeUp} custom={i} className="bg-transparent p-8 h-full hover:bg-transparent transition-colors">
                 <div className="w-2 h-2 bg-[#2A3E7C] rounded-full mb-5" />
                 <h3 className="text-white font-bold uppercase tracking-tight mb-3">{c.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{c.desc}</p>
@@ -529,7 +529,7 @@ const industries = [
 
 function Industries() {
   return (
-    <section id="indústrias" className="bg-[#111827] border-t border-white/5 py-28">
+    <section id="indústrias" className="bg-transparent border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
@@ -545,7 +545,7 @@ function Industries() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
           {industries.map((ind, i) => (
             <Section key={i}>
-              <motion.div variants={fadeUp} custom={i} className="bg-[#111827] p-8 hover:bg-[#111827] transition-colors group h-full">
+              <motion.div variants={fadeUp} custom={i} className="bg-transparent p-8 hover:bg-transparent transition-colors group h-full">
                 <ind.icon className="text-[#2A3E7C] mb-5" size={22} />
                 <h3 className="text-white font-bold uppercase tracking-tight mb-3 group-hover:text-[#2A3E7C] transition-colors">{ind.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{ind.desc}</p>
@@ -570,7 +570,7 @@ const differentiators = [
 
 function WhyChoose() {
   return (
-    <section className="bg-[#111827] border-t border-white/5 py-28">
+    <section className="bg-transparent border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
@@ -584,7 +584,7 @@ function WhyChoose() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
           {differentiators.map((d, i) => (
             <Section key={i}>
-              <motion.div variants={fadeUp} custom={i} className={`bg-[#111827] p-8 hover:bg-[#111827] transition-colors h-full ${i === differentiators.length - 1 && differentiators.length % 3 !== 0 ? "md:col-span-2 lg:col-span-1" : ""}`}>
+              <motion.div variants={fadeUp} custom={i} className={`bg-transparent p-8 hover:bg-transparent transition-colors h-full ${i === differentiators.length - 1 && differentiators.length % 3 !== 0 ? "md:col-span-2 lg:col-span-1" : ""}`}>
                 <div className="text-[#2A3E7C] font-black text-4xl mb-5 opacity-90">{d.num}</div>
                 <h3 className="text-white font-bold uppercase tracking-tight mb-3">{d.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{d.desc}</p>
@@ -615,7 +615,7 @@ function Contact() {
     setSent(true);
   }
   return (
-    <section id="contato" className="bg-[#111827] border-t border-white/5 py-28">
+    <section id="contato" className="bg-transparent border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16">
           <Section>
@@ -689,7 +689,7 @@ function Contact() {
 /* ── Footer ── */
 function Footer() {
   return (
-    <footer className="bg-[#111827] border-t border-white/5">
+    <footer className="bg-transparent border-t border-white/5">
       {/* Grupo Pont CTA */}
       <div className="border-b border-white/5 py-16">
         <a
@@ -756,7 +756,7 @@ function Footer() {
 /* ── App ── */
 export default function App() {
   return (
-    <div className="bg-[#111827] text-white min-h-screen">
+    <div className="bg-transparent text-white min-h-screen">
       <Navbar />
       <Hero />
       <Services />

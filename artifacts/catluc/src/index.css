@@ -54,9 +54,14 @@
   * {
     @apply border-border;
   }
+  html {
+    background: linear-gradient(135deg, #0B1120, #1E293B);
+    min-height: 100%;
+  }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    background-color: #111827;
+    @apply text-foreground font-sans antialiased;
+    background: transparent;
+    min-height: 100vh;
   }
   ::selection {
     background-color: #2A3E7C;
