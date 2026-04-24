@@ -76,6 +76,6 @@
 }
 
 [class*="text-[#2A3E7C]"] {
-  -webkit-text-stroke: 0.4px rgba(255, 255, 255, 0.45);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
   paint-order: stroke fill;
 }
