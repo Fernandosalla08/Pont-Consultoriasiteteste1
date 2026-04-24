@@ -81,7 +81,7 @@ function Navbar() {
           ))}
           <button
             onClick={() => scrollTo("contato")}
-            className="text-sm bg-[#1E3272] hover:bg-[#1E3272] text-white font-bold px-5 py-2 transition-colors uppercase tracking-wider"
+            className="text-sm bg-[#213162] hover:bg-[#213162] text-white font-bold px-5 py-2 transition-colors uppercase tracking-wider"
           >
             Fale Conosco
           </button>
@@ -117,7 +117,7 @@ function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-[#1E3272] text-sm font-bold tracking-[0.25em] uppercase mb-6"
+          className="text-[#213162] text-sm font-bold tracking-[0.25em] uppercase mb-6"
         >
           Pont Consultoria — Brasil
         </motion.p>
@@ -132,7 +132,7 @@ function Hero() {
           <br className="hidden md:block" />
           AUTOMATIZE.{" "}
           <br className="hidden md:block" />
-          <em className="not-italic text-[#1E3272]">ACELERE.</em>
+          <em className="not-italic text-[#213162]">ACELERE.</em>
         </motion.h1>
 
         <motion.p
@@ -155,7 +155,7 @@ function Hero() {
             { value: "60%", label: "Redução de Desperdícios" },
             { value: "90 Dias", label: "Retorno Rápido" },
           ].map((m) => (
-            <div key={m.label} className="border-l-2 border-[#1E3272] pl-4">
+            <div key={m.label} className="border-l-2 border-[#213162] pl-4">
               <div className="text-3xl font-black text-white">{m.value}</div>
               <div className="text-xs text-white/50 uppercase tracking-widest mt-1">{m.label}</div>
             </div>
@@ -171,7 +171,7 @@ function Hero() {
           <a
             href="#contato"
             onClick={(e) => { e.preventDefault(); document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" }); }}
-            className="inline-flex items-center gap-2 bg-[#1E3272] hover:bg-[#1E3272] text-black font-bold px-8 py-4 text-sm uppercase tracking-wider transition-all"
+            className="inline-flex items-center gap-2 bg-[#213162] hover:bg-[#213162] text-black font-bold px-8 py-4 text-sm uppercase tracking-wider transition-all"
           >
             Inicie sua Transformação <FiArrowRight />
           </a>
@@ -215,11 +215,11 @@ function Services() {
     <section id="serviços" className="bg-[#2c2c2c] border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
-          <motion.p variants={fadeUp} className="text-[#1E3272] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+          <motion.p variants={fadeUp} className="text-[#213162] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             O Que Fazemos
           </motion.p>
           <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
-            NOSSOS <em className="not-italic text-[#1E3272]">SERVIÇOS</em>
+            NOSSOS <em className="not-italic text-[#213162]">SERVIÇOS</em>
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-2xl mb-16">
             Da consultoria estratégica de negócios à automação industrial hands-on — soluções de ponta a ponta que criam vantagem competitiva duradoura.
@@ -234,8 +234,8 @@ function Services() {
                 custom={i}
                 className="bg-[#2c2c2c] p-8 hover:bg-[#0f0f0f] transition-colors group h-full"
               >
-                <div className="w-12 h-12 border border-[#1E3272]/40 flex items-center justify-center mb-6 group-hover:border-[#1E3272] group-hover:bg-[#1E3272]/10 transition-all">
-                  <s.icon className="text-[#1E3272]" size={20} />
+                <div className="w-12 h-12 border border-[#213162]/40 flex items-center justify-center mb-6 group-hover:border-[#213162] group-hover:bg-[#213162]/10 transition-all">
+                  <s.icon className="text-[#213162]" size={20} />
                 </div>
                 <h3 className="text-white font-bold text-lg uppercase tracking-tight mb-3">{s.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed mb-6">{s.desc}</p>
@@ -268,11 +268,11 @@ function VSM() {
     <section id="vsm-&-lean" className="bg-[#2c2c2c] border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
-          <motion.p variants={fadeUp} className="text-[#1E3272] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+          <motion.p variants={fadeUp} className="text-[#213162] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             Sistema Toyota de Produção
           </motion.p>
           <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
-            FLUXO DE VALOR DO SHINGO &amp; <em className="not-italic text-[#1E3272]">IMPLANTAÇÃO LEAN</em>
+            FLUXO DE VALOR DO SHINGO &amp; <em className="not-italic text-[#213162]">IMPLANTAÇÃO LEAN</em>
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-3xl mb-6 leading-relaxed">
             Realizamos uma análise profunda da sua fábrica usando o <strong className="text-white">Fluxo de Valor do Shingo</strong>, a ferramenta central do Sistema Toyota de Produção criada por <strong className="text-white">Shigeo Shingo</strong> — tornando cada perda, desperdício e ineficiência visível em todo o fluxo produtivo.
@@ -283,7 +283,7 @@ function VSM() {
         </Section>
 
         <Section>
-          <motion.div variants={fadeUp} className="bg-[#1E3272]/10 border-l-4 border-[#1E3272] p-6 mb-10 max-w-xl">
+          <motion.div variants={fadeUp} className="bg-[#213162]/10 border-l-4 border-[#213162] p-6 mb-10 max-w-xl">
             <div className="text-white/60 text-sm uppercase tracking-widest mb-1">Nosso diagnóstico revela:</div>
             <ul className="space-y-2 mt-3">
               {[
@@ -294,7 +294,7 @@ function VSM() {
                 "Retrabalho & Defeitos — falhas de qualidade que destroem o lead time",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-white/60">
-                  <FiCheckCircle className="text-[#1E3272] mt-0.5 shrink-0" />
+                  <FiCheckCircle className="text-[#213162] mt-0.5 shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -306,7 +306,7 @@ function VSM() {
           {vsmCards.map((c, i) => (
             <Section key={i}>
               <motion.div variants={fadeUp} custom={i} className="bg-[#2c2c2c] p-8 hover:bg-[#2c2c2c] transition-colors h-full">
-                <c.icon className="text-[#1E3272] mb-4" size={22} />
+                <c.icon className="text-[#213162] mb-4" size={22} />
                 <h3 className="text-white font-bold uppercase tracking-tight mb-3">{c.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{c.desc}</p>
               </motion.div>
@@ -316,7 +316,7 @@ function VSM() {
 
         <Section>
           <motion.div variants={fadeUp} className="text-center">
-            <div className="text-5xl md:text-7xl font-black text-[#1E3272]">40–70%</div>
+            <div className="text-5xl md:text-7xl font-black text-[#213162]">40–70%</div>
             <div className="text-white/50 text-sm uppercase tracking-widest mt-2">Redução Típica de Lead Time por Iniciativa</div>
           </motion.div>
         </Section>
@@ -336,15 +336,15 @@ function AutomationPhilosophy() {
     <section className="bg-[#2c2c2c] border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
-          <motion.p variants={fadeUp} className="text-[#1E3272] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+          <motion.p variants={fadeUp} className="text-[#213162] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             Nossa Filosofia de Automação
           </motion.p>
           <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-12">
             NÃO AUTOMATIZE{" "}
-            <em className="not-italic text-[#1E3272]">DESPERDÍCIOS.</em>
+            <em className="not-italic text-[#213162]">DESPERDÍCIOS.</em>
             <br />
             AUTOMATIZE{" "}
-            <em className="not-italic text-[#1E3272]">PROCESSOS ENXUTOS.</em>
+            <em className="not-italic text-[#213162]">PROCESSOS ENXUTOS.</em>
           </motion.h2>
         </Section>
 
@@ -352,12 +352,12 @@ function AutomationPhilosophy() {
           {steps.map((s, i) => (
             <Section key={i}>
               <motion.div variants={fadeUp} custom={i} className="bg-[#2c2c2c] p-10 relative h-full">
-                <div className="text-[#1E3272]/60 text-8xl font-black absolute top-6 right-6 leading-none select-none">{s.num}</div>
-                <s.icon className="text-[#1E3272] mb-5" size={24} />
+                <div className="text-[#213162]/60 text-8xl font-black absolute top-6 right-6 leading-none select-none">{s.num}</div>
+                <s.icon className="text-[#213162] mb-5" size={24} />
                 <h3 className="text-white font-bold text-xl uppercase tracking-tight mb-3">{s.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
                 {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-[#1E3272]">
+                  <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-[#213162]">
                     <FiArrowRight size={20} />
                   </div>
                 )}
@@ -367,7 +367,7 @@ function AutomationPhilosophy() {
         </div>
 
         <Section>
-          <motion.p variants={fadeUp} className="text-white/50 text-base max-w-3xl leading-relaxed border-l-4 border-[#1E3272] pl-6">
+          <motion.p variants={fadeUp} className="text-white/50 text-base max-w-3xl leading-relaxed border-l-4 border-[#213162] pl-6">
             Poucas empresas no mundo aplicam essa sequência. A maioria automatiza primeiro — e incorpora permanentemente suas ineficiências em máquinas caras.{" "}
             <strong className="text-white">Nós automatizamos processos enxutos. Nunca perdas.</strong>
           </motion.p>
@@ -400,11 +400,11 @@ function TOC() {
     <section id="toc" className="bg-[#2c2c2c] border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
-          <motion.p variants={fadeUp} className="text-[#1E3272] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+          <motion.p variants={fadeUp} className="text-[#213162] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             Teoria das Restrições
           </motion.p>
           <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-16">
-            A ABORDAGEM <em className="not-italic text-[#1E3272]">TEORIA DAS RESTRIÇÕES</em>
+            A ABORDAGEM <em className="not-italic text-[#213162]">TEORIA DAS RESTRIÇÕES</em>
           </motion.h2>
         </Section>
 
@@ -414,11 +414,11 @@ function TOC() {
             {tocSteps.map((s, i) => (
               <Section key={i}>
                 <motion.div variants={fadeUp} custom={i} className="flex gap-5 py-7 group hover:bg-white/2 transition-colors px-2">
-                  <div className="shrink-0 w-10 h-10 border border-[#1E3272]/30 group-hover:border-[#1E3272] group-hover:bg-[#1E3272]/10 flex items-center justify-center transition-all">
-                    <s.icon className="text-[#1E3272]" size={16} />
+                  <div className="shrink-0 w-10 h-10 border border-[#213162]/30 group-hover:border-[#213162] group-hover:bg-[#213162]/10 flex items-center justify-center transition-all">
+                    <s.icon className="text-[#213162]" size={16} />
                   </div>
                   <div>
-                    <div className="text-[#1E3272] text-xs font-bold tracking-widest mb-1">0{i + 1}</div>
+                    <div className="text-[#213162] text-xs font-bold tracking-widest mb-1">0{i + 1}</div>
                     <h3 className="text-white font-bold uppercase tracking-tight mb-2">{s.title}</h3>
                     <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
                   </div>
@@ -431,7 +431,7 @@ function TOC() {
           <Section>
             <motion.div variants={fadeUp} className="border border-white/10 p-8 h-fit sticky top-24">
               <div className="text-white/40 text-xs uppercase tracking-widest mb-1">Análise de Throughput</div>
-              <div className="text-white font-black text-xl uppercase mb-6">ENCONTRE O <span className="text-[#1E3272]">GARGALO</span></div>
+              <div className="text-white font-black text-xl uppercase mb-6">ENCONTRE O <span className="text-[#213162]">GARGALO</span></div>
               <div className="space-y-4">
                 {throughputSteps.map((s) => (
                   <div key={s.label}>
@@ -443,7 +443,7 @@ function TOC() {
                     </div>
                     <div className="h-1.5 bg-white/5 overflow-hidden">
                       <div
-                        className={`h-full transition-all ${s.warn ? "bg-red-500" : "bg-[#1E3272]/60"}`}
+                        className={`h-full transition-all ${s.warn ? "bg-red-500" : "bg-[#213162]/60"}`}
                         style={{ width: `${s.pct}%` }}
                       />
                     </div>
@@ -468,11 +468,11 @@ function FinancialCompass() {
     <section className="bg-[#2c2c2c] border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
-          <motion.p variants={fadeUp} className="text-[#1E3272] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+          <motion.p variants={fadeUp} className="text-[#213162] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             Metodologia Pont Consultoria
           </motion.p>
           <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
-            A <em className="not-italic text-[#1E3272]">BÚSSOLA</em> FINANCEIRA
+            A <em className="not-italic text-[#213162]">BÚSSOLA</em> FINANCEIRA
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-2xl mb-12 leading-relaxed">
             Uma metodologia que conecta a Contabilidade de Ganhos da Teoria das Restrições à <strong className="text-white">Engenharia de Produto</strong> e <strong className="text-white">Engenharia de Processo</strong> — o elo perdido entre o chão de fábrica e o controle financeiro.
@@ -483,11 +483,11 @@ function FinancialCompass() {
           <motion.div variants={fadeUp} className="flex flex-col md:flex-row items-center gap-0 mb-16 overflow-x-auto">
             {flow.map((label, i) => (
               <React.Fragment key={label}>
-                <div className={`shrink-0 px-6 py-4 border font-bold text-sm uppercase tracking-wider whitespace-nowrap ${i === 1 ? "border-[#1E3272] bg-[#1E3272]/10 text-[#1E3272]" : "border-white/20 bg-white/5 text-white"}`}>
+                <div className={`shrink-0 px-6 py-4 border font-bold text-sm uppercase tracking-wider whitespace-nowrap ${i === 1 ? "border-[#213162] bg-[#213162]/10 text-[#213162]" : "border-white/20 bg-white/5 text-white"}`}>
                   {label}
                 </div>
                 {i < flow.length - 1 && (
-                  <FiArrowRight className="text-[#1E3272] shrink-0 rotate-90 md:rotate-0 my-1 md:my-0 mx-0 md:mx-1" size={16} />
+                  <FiArrowRight className="text-[#213162] shrink-0 rotate-90 md:rotate-0 my-1 md:my-0 mx-0 md:mx-1" size={16} />
                 )}
               </React.Fragment>
             ))}
@@ -502,7 +502,7 @@ function FinancialCompass() {
           ].map((c, i) => (
             <Section key={i}>
               <motion.div variants={fadeUp} custom={i} className="bg-[#2c2c2c] p-8 h-full hover:bg-[#2c2c2c] transition-colors">
-                <div className="w-2 h-2 bg-[#1E3272] rounded-full mb-5" />
+                <div className="w-2 h-2 bg-[#213162] rounded-full mb-5" />
                 <h3 className="text-white font-bold uppercase tracking-tight mb-3">{c.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{c.desc}</p>
               </motion.div>
@@ -532,11 +532,11 @@ function Industries() {
     <section id="indústrias" className="bg-[#2c2c2c] border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
-          <motion.p variants={fadeUp} className="text-[#1E3272] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+          <motion.p variants={fadeUp} className="text-[#213162] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             Quem Atendemos
           </motion.p>
           <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
-            INDÚSTRIAS <em className="not-italic text-[#1E3272]">ALVO</em>
+            INDÚSTRIAS <em className="not-italic text-[#213162]">ALVO</em>
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-2xl mb-16">
             Expertise profunda em manufatura e setores industriais com métodos comprovados que se traduzem entre verticais.
@@ -546,8 +546,8 @@ function Industries() {
           {industries.map((ind, i) => (
             <Section key={i}>
               <motion.div variants={fadeUp} custom={i} className="bg-[#2c2c2c] p-8 hover:bg-[#2c2c2c] transition-colors group h-full">
-                <ind.icon className="text-[#1E3272] mb-5" size={22} />
-                <h3 className="text-white font-bold uppercase tracking-tight mb-3 group-hover:text-[#1E3272] transition-colors">{ind.title}</h3>
+                <ind.icon className="text-[#213162] mb-5" size={22} />
+                <h3 className="text-white font-bold uppercase tracking-tight mb-3 group-hover:text-[#213162] transition-colors">{ind.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{ind.desc}</p>
               </motion.div>
             </Section>
@@ -573,11 +573,11 @@ function WhyChoose() {
     <section className="bg-[#2c2c2c] border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
-          <motion.p variants={fadeUp} className="text-[#1E3272] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+          <motion.p variants={fadeUp} className="text-[#213162] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             Nossos Diferenciais
           </motion.p>
           <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-16">
-            POR QUE ESCOLHER A <em className="not-italic text-[#1E3272]">PONT</em>
+            POR QUE ESCOLHER A <em className="not-italic text-[#213162]">PONT</em>
           </motion.h2>
         </Section>
 
@@ -585,7 +585,7 @@ function WhyChoose() {
           {differentiators.map((d, i) => (
             <Section key={i}>
               <motion.div variants={fadeUp} custom={i} className={`bg-[#2c2c2c] p-8 hover:bg-[#2c2c2c] transition-colors h-full ${i === differentiators.length - 1 && differentiators.length % 3 !== 0 ? "md:col-span-2 lg:col-span-1" : ""}`}>
-                <div className="text-[#1E3272] font-black text-4xl mb-5 opacity-90">{d.num}</div>
+                <div className="text-[#213162] font-black text-4xl mb-5 opacity-90">{d.num}</div>
                 <h3 className="text-white font-bold uppercase tracking-tight mb-3">{d.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{d.desc}</p>
               </motion.div>
@@ -595,7 +595,7 @@ function WhyChoose() {
 
         {/* Quote */}
         <Section>
-          <motion.blockquote variants={fadeUp} className="mt-20 border-l-4 border-[#1E3272] pl-8 max-w-3xl">
+          <motion.blockquote variants={fadeUp} className="mt-20 border-l-4 border-[#213162] pl-8 max-w-3xl">
             <p className="text-2xl md:text-3xl text-white font-bold italic leading-snug mb-4">
               "Todo sistema tem uma restrição. Toda restrição é uma oportunidade. Existimos para transformar sua maior limitação na sua maior vantagem competitiva."
             </p>
@@ -619,17 +619,17 @@ function Contact() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16">
           <Section>
-            <motion.p variants={fadeUp} className="text-[#1E3272] text-xs font-bold tracking-[0.3em] uppercase mb-3">
+            <motion.p variants={fadeUp} className="text-[#213162] text-xs font-bold tracking-[0.3em] uppercase mb-3">
               Entre em Contato
             </motion.p>
             <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-6">
-              VAMOS FALAR SOBRE O SEU <em className="not-italic text-[#1E3272]">DESAFIO</em>
+              VAMOS FALAR SOBRE O SEU <em className="not-italic text-[#213162]">DESAFIO</em>
             </motion.h2>
             <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg mb-10 leading-relaxed">
               Conte-nos sobre sua operação e retornaremos em até 24 horas. Sem compromisso — apenas uma conversa.
             </motion.p>
             <motion.div variants={fadeUp} custom={3} className="flex items-center gap-4">
-              <FiMail className="text-[#1E3272]" size={20} />
+              <FiMail className="text-[#213162]" size={20} />
               <a href="mailto:contato@pontconsultoria.com.br" className="text-white/70 hover:text-white transition-colors font-mono text-sm">
                 contato@pontconsultoria.com.br
               </a>
@@ -640,7 +640,7 @@ function Contact() {
             <motion.div variants={fadeUp} className="border border-white/10 p-8">
               {sent ? (
                 <div className="text-center py-10">
-                  <FiCheckCircle className="text-[#1E3272] mx-auto mb-4" size={40} />
+                  <FiCheckCircle className="text-[#213162] mx-auto mb-4" size={40} />
                   <h3 className="text-white font-bold text-xl uppercase mb-2">Mensagem Enviada!</h3>
                   <p className="text-white/50 text-sm">Retornaremos em até 24 horas.</p>
                 </div>
@@ -656,7 +656,7 @@ function Contact() {
                       <input
                         type={f.type}
                         placeholder={f.placeholder}
-                        className="w-full bg-white/5 border border-white/10 focus:border-[#1E3272] text-white placeholder:text-white/20 px-4 py-3 text-sm outline-none transition-colors"
+                        className="w-full bg-white/5 border border-white/10 focus:border-[#213162] text-white placeholder:text-white/20 px-4 py-3 text-sm outline-none transition-colors"
                         required
                       />
                     </div>
@@ -666,13 +666,13 @@ function Contact() {
                     <textarea
                       rows={4}
                       placeholder="Descreva sua operação e o principal desafio que enfrenta..."
-                      className="w-full bg-white/5 border border-white/10 focus:border-[#1E3272] text-white placeholder:text-white/20 px-4 py-3 text-sm outline-none transition-colors resize-none"
+                      className="w-full bg-white/5 border border-white/10 focus:border-[#213162] text-white placeholder:text-white/20 px-4 py-3 text-sm outline-none transition-colors resize-none"
                       required
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-[#1E3272] hover:bg-[#1E3272] text-black font-bold py-4 text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+                    className="w-full bg-[#213162] hover:bg-[#213162] text-black font-bold py-4 text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2"
                   >
                     Enviar Mensagem <FiArrowRight />
                   </button>
