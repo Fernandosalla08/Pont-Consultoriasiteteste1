@@ -330,7 +330,7 @@ function AutomationPhilosophy() {
   const steps = [
     { num: "1", icon: FiMapPin, title: "Mapear & Expor", desc: "Fluxo de Valor do Shingo revela cada perda e fluxo quebrado no seu processo atual" },
     { num: "2", icon: FiTarget, title: "Simplificar Primeiro", desc: "Teoria das Restrições + Lean eliminam desperdícios, sincronizam o fluxo e enxugam ao máximo" },
-    { num: "3", icon: FiCpu, title: "Só Então Automatizar", desc: "Agora automatizamos — um processo limpo, enxuto e otimizado — multiplicando a eficiência, nunca travando desperdícios" },
+    { num: "3", icon: FiCpu, title: "Só Então Otimizar", desc: "Agora otimizamos — um processo limpo, enxuto e otimizado — multiplicando a eficiência, nunca travando desperdícios" },
   ];
   return (
     <section className="bg-transparent border-t border-white/5 py-28">
@@ -369,7 +369,7 @@ function AutomationPhilosophy() {
         <Section>
           <motion.p variants={fadeUp} className="text-white/50 text-base max-w-3xl leading-relaxed border-l-4 border-[#2A3E7C] pl-6">
             Poucas empresas no mundo aplicam essa sequência. A maioria automatiza primeiro — e incorpora permanentemente suas ineficiências em máquinas caras.{" "}
-            <strong className="text-white">Nós automatizamos processos enxutos. Nunca perdas.</strong>
+            <strong className="text-white">Nós otimizamos processos enxutos. Nunca perdas.</strong>
           </motion.p>
         </Section>
       </div>
@@ -561,7 +561,7 @@ function Industries() {
 /* ── Why Choose ── */
 const differentiators = [
   { num: "1", title: "Expertise Técnica e de Negócios", desc: "Combinação rara de consultoria estratégica e automação industrial hands-on. Não apenas aconselhamos — implementamos." },
-  { num: "2", title: "Simplificar Antes de Automatizar", desc: "Nunca automatizamos perdas. Primeiro eliminamos desperdícios com Fluxo de Valor do Shingo e Teoria das Restrições, depois automatizamos processos enxutos." },
+  { num: "2", title: "Simplificar Antes de Otimizar", desc: "Nunca otimizamos perdas. Primeiro eliminamos desperdícios com Fluxo de Valor do Shingo e Teoria das Restrições, depois otimizamos processos enxutos." },
   { num: "3", title: "Teoria das Restrições + Sistema Toyota Comprovados", desc: "Dois dos métodos operacionais mais poderosos combinados — entregando resultados mensuráveis em 90 dias ou menos." },
   { num: "4", title: "A Bússola Financeira", desc: "Nossa metodologia conecta o chão de fábrica à engenharia de produto, engenharia de processo e controle financeiro." },
   { num: "5", title: "Agnósticos em Tecnologia", desc: "Recomendamos o que é certo para a sua situação — robótica, automação, sistemas industriais — não o que somos pagos para vender." },
