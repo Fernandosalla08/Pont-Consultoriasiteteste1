@@ -130,7 +130,7 @@ function Hero() {
         >
           TRANSFORME.{" "}
           <br className="hidden md:block" />
-          AUTOMATIZE.{" "}
+          OTIMIZE.{" "}
           <br className="hidden md:block" />
           <em className="not-italic text-[#2A3E7C]">ACELERE.</em>
         </motion.h1>
