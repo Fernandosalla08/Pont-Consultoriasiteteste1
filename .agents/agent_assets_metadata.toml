@@ -6,3 +6,9 @@ id = "ifkFoZ9Biavg0uWrNBohs"
 uri = "file://pont-consultoria-github-pages.tar.gz"
 type = "unspecified"
 title = "Pont Consultoria — Arquivos para GitHub Pages"
+
+[[outputs]]
+id = "cevxISxgCsc6pvb22w3tg"
+uri = "file://pont-consultoria-github-pages.zip"
+type = "unspecified"
+title = "Pont Consultoria — GitHub Pages (ZIP)"
