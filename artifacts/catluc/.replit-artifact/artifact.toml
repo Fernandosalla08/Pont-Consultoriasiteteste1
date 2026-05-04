@@ -1,6 +1,6 @@
 kind = "web"
 previewPath = "/"
-title = "CatLuc"
+title = "Pont Consultoria"
 version = "1.0.0"
 id = "artifacts/catluc"
 router = "path"
