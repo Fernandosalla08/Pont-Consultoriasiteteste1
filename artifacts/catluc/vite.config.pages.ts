@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 export default defineConfig({
-  base: "/teste_site_pont/",
+  base: "/pont-consultoria-test/",
   plugins: [
     react(),
     tailwindcss(),
