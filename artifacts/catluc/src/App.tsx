@@ -702,17 +702,23 @@ function Footer() {
           <p className="text-white font-bold text-sm uppercase tracking-widest text-center leading-relaxed">
             Soluções em<br />Engenharia de Produto
           </p>
-          <div className="flex flex-col md:flex-row items-center gap-8 w-full max-w-5xl mt-4 mb-2">
+          <div className="relative w-full max-w-5xl mt-4 mb-2">
             <img
               src={`${import.meta.env.BASE_URL}pont-automacao-infografico.png`}
               alt="Infográfico Pont Automação"
-              className="w-full md:flex-1 rounded-lg opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+              className="w-full rounded-lg opacity-90 group-hover:opacity-100 transition-opacity duration-300"
             />
+            {/* Cobre o logo antigo "Pont Consulting" embutido no infográfico */}
+            <div
+              className="absolute"
+              style={{ top: "5%", left: "35%", width: "30%", height: "16%", backgroundColor: "#ffffff" }}
+            />
+            {/* Sobrepõe o logo correto */}
             <img
               src={`${import.meta.env.BASE_URL}pont-automacao-logo-new.png`}
               alt="Pont Automação"
-              className="h-40 w-auto shrink-0 transition-all duration-300"
-              style={{ filter: "brightness(1.4) contrast(1.1)" }}
+              className="absolute"
+              style={{ top: "4%", left: "34%", width: "32%", objectFit: "contain" }}
             />
           </div>
           <div className="flex items-center gap-4 mt-2 px-8 py-4 border border-white/25 rounded-xl bg-white/5 group-hover:bg-white/10 group-hover:border-white/50 transition-all duration-300 max-w-2xl text-center">
