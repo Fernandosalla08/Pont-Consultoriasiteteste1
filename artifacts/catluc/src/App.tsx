@@ -27,7 +27,8 @@ import {
   FiPackage,
 } from "react-icons/fi";
 
-const pontLogo = "/pont-logo-v2.png";
+const base = import.meta.env.BASE_URL;
+const pontLogo = `${base}pont-logo-v2.png`;
 
 /* ── helpers ── */
 const fadeUp = {
@@ -702,7 +703,7 @@ function Footer() {
             Soluções em<br />Engenharia de Produto
           </p>
           <img
-            src="/pont-automacao-infografico.png"
+            src={`${import.meta.env.BASE_URL}pont-automacao-infografico.png`}
             alt="Infográfico Pont Automação"
             className="w-full max-w-4xl rounded-lg mt-4 mb-2 opacity-90 group-hover:opacity-100 transition-opacity duration-300"
           />
@@ -722,7 +723,7 @@ function Footer() {
             Clique aqui
           </p>
           <img
-            src="/pont-automacao-recolored.png"
+            src={`${import.meta.env.BASE_URL}pont-automacao-recolored.png`}
             alt="Pont Automação"
             className="h-40 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300"
           />
