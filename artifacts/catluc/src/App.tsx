@@ -713,9 +713,9 @@ function Footer() {
             className="h-32 w-auto transition-all duration-300"
             style={{ filter: "brightness(1.3) contrast(1.3) saturate(1.2)" }}
           />
-          <div className="flex items-center gap-3 mt-2 px-6 py-3 border border-white/20 rounded-full bg-white/5 group-hover:bg-white/10 group-hover:border-white/40 transition-all duration-300">
-            <span className="text-white font-semibold text-sm uppercase tracking-[0.2em]">Visitar site da Pont Automação</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+          <div className="flex items-center gap-4 mt-2 px-8 py-4 border border-white/25 rounded-xl bg-white/5 group-hover:bg-white/10 group-hover:border-white/50 transition-all duration-300 max-w-2xl text-center">
+            <span className="text-white font-semibold text-base leading-snug">Clique aqui e saiba como transformar os seus projetos feitos manualmente em um configurador de produtos</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white shrink-0">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
