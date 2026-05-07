@@ -708,12 +708,6 @@ function Footer() {
               alt="Infográfico Pont Automação"
               className="w-full rounded-lg opacity-90 group-hover:opacity-100 transition-opacity duration-300"
             />
-            <img
-              src={`${import.meta.env.BASE_URL}pont-automacao-logo-corner.png`}
-              alt="Pont Automação"
-              className="absolute w-auto"
-              style={{ bottom: "1%", right: "9%", height: "7.2%" }}
-            />
           </div>
           <div className="flex items-center gap-4 mt-2 px-8 py-4 border border-white/25 rounded-xl bg-white/5 group-hover:bg-white/10 group-hover:border-white/50 transition-all duration-300 max-w-2xl text-center">
             <span className="text-white font-semibold text-base leading-snug">Clique aqui e saiba como transformar os seus projetos feitos manualmente em um configurador de produtos</span>
