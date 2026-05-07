@@ -702,19 +702,21 @@ function Footer() {
           <p className="text-white font-bold text-sm uppercase tracking-widest text-center leading-relaxed">
             Soluções em<br />Engenharia de Produto
           </p>
-          <div className="relative w-full max-w-4xl mt-4 mb-2">
+          <div className="w-full max-w-4xl mt-4">
             <img
               src={`${import.meta.env.BASE_URL}pont-automacao-infografico-v4.png`}
               alt="Infográfico Pont Automação"
               className="w-full rounded-lg opacity-90 group-hover:opacity-100 transition-opacity duration-300"
             />
-          </div>
-          <div className="flex items-center gap-4 mt-2 px-8 py-4 border border-white/25 rounded-xl bg-white/5 group-hover:bg-white/10 group-hover:border-white/50 transition-all duration-300 max-w-2xl text-center">
-            <span className="text-white font-semibold text-base leading-snug">Clique aqui e saiba como transformar os seus projetos feitos manualmente em um configurador de produtos</span>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white shrink-0">
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
+            <div className="mt-3 w-[30%]">
+              <div className="flex items-center gap-3 px-5 py-3 border border-white/25 rounded-xl bg-white/5 group-hover:bg-white/10 group-hover:border-white/50 transition-all duration-300">
+                <span className="text-white font-semibold text-sm leading-snug">Clique aqui e saiba como transformar os seus projetos feitos manualmente em um configurador de produtos</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white shrink-0">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </div>
+            </div>
           </div>
         </a>
       </div>
