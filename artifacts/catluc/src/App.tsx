@@ -703,7 +703,7 @@ function Footer() {
             Soluções em<br />Engenharia de Produto
           </p>
           <img
-            src={`${import.meta.env.BASE_URL}pont-automacao-infografico.png`}
+            src={`${import.meta.env.BASE_URL}pont-automacao-infografico-v3.png`}
             alt="Infográfico Pont Automação"
             className="w-full max-w-4xl rounded-lg mt-4 mb-2 opacity-90 group-hover:opacity-100 transition-opacity duration-300"
           />
