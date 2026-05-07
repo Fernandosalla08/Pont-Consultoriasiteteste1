@@ -708,10 +708,10 @@ function Footer() {
             className="w-full max-w-4xl rounded-lg mt-4 mb-2 opacity-90 group-hover:opacity-100 transition-opacity duration-300"
           />
           <img
-            src={`${import.meta.env.BASE_URL}pont-automacao-recolored.png`}
+            src={`${import.meta.env.BASE_URL}pont-automacao-logo-new.png`}
             alt="Pont Automação"
             className="h-32 w-auto transition-all duration-300"
-            style={{ filter: "brightness(1.3) contrast(1.3) saturate(1.2)" }}
+            style={{ filter: "brightness(1.4) contrast(1.1)" }}
           />
           <div className="flex items-center gap-4 mt-2 px-8 py-4 border border-white/25 rounded-xl bg-white/5 group-hover:bg-white/10 group-hover:border-white/50 transition-all duration-300 max-w-2xl text-center">
             <span className="text-white font-semibold text-base leading-snug">Clique aqui e saiba como transformar os seus projetos feitos manualmente em um configurador de produtos</span>
