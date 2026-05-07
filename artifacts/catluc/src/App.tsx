@@ -712,7 +712,7 @@ function Footer() {
               src={`${import.meta.env.BASE_URL}pont-automacao-logo-corner.png`}
               alt="Pont Automação"
               className="absolute w-auto"
-              style={{ mixBlendMode: "screen", filter: "brightness(1.5) contrast(1.1)", bottom: "1%", right: "12%", height: "13%" }}
+              style={{ mixBlendMode: "screen", filter: "brightness(1.5) contrast(1.1)", bottom: "-1%", right: "6%", height: "13%" }}
             />
           </div>
           <div className="flex items-center gap-4 mt-2 px-8 py-4 border border-white/25 rounded-xl bg-white/5 group-hover:bg-white/10 group-hover:border-white/50 transition-all duration-300 max-w-2xl text-center">
