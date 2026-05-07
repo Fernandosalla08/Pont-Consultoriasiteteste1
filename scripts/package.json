@@ -10,8 +10,5 @@
   "devDependencies": {
     "@types/node": "catalog:",
     "tsx": "catalog:"
-  },
-  "dependencies": {
-    "jimp": "^1.6.1"
   }
 }
