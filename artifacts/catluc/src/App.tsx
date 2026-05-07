@@ -702,25 +702,17 @@ function Footer() {
           <p className="text-white font-bold text-sm uppercase tracking-widest text-center leading-relaxed">
             Soluções em<br />Engenharia de Produto
           </p>
-          <div className="relative w-full max-w-5xl mt-4 mb-2">
-            <img
-              src={`${import.meta.env.BASE_URL}pont-automacao-infografico.png`}
-              alt="Infográfico Pont Automação"
-              className="w-full rounded-lg opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-            />
-            {/* Cobre o logo antigo "Pont Consulting" embutido no infográfico */}
-            <div
-              className="absolute"
-              style={{ top: "5%", left: "35%", width: "30%", height: "16%", backgroundColor: "#ffffff" }}
-            />
-            {/* Sobrepõe o logo correto */}
-            <img
-              src={`${import.meta.env.BASE_URL}pont-automacao-logo-new.png`}
-              alt="Pont Automação"
-              className="absolute"
-              style={{ top: "4%", left: "34%", width: "32%", objectFit: "contain" }}
-            />
-          </div>
+          <img
+            src={`${import.meta.env.BASE_URL}pont-automacao-infografico.png`}
+            alt="Infográfico Pont Automação"
+            className="w-full max-w-4xl rounded-lg mt-4 mb-2 opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+          />
+          <img
+            src={`${import.meta.env.BASE_URL}pont-automacao-logo-new.png`}
+            alt="Pont Automação"
+            className="h-32 w-auto transition-all duration-300"
+            style={{ filter: "brightness(1.4) contrast(1.1)" }}
+          />
           <div className="flex items-center gap-4 mt-2 px-8 py-4 border border-white/25 rounded-xl bg-white/5 group-hover:bg-white/10 group-hover:border-white/50 transition-all duration-300 max-w-2xl text-center">
             <span className="text-white font-semibold text-base leading-snug">Clique aqui e saiba como transformar os seus projetos feitos manualmente em um configurador de produtos</span>
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white shrink-0">
