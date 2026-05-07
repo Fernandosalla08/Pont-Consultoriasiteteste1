@@ -704,7 +704,7 @@ function Footer() {
           </p>
           <div className="relative w-full max-w-4xl mt-4 mb-2">
             <img
-              src={`${import.meta.env.BASE_URL}pont-automacao-infografico-v3.png`}
+              src={`${import.meta.env.BASE_URL}pont-automacao-infografico-v4.png`}
               alt="Infográfico Pont Automação"
               className="w-full rounded-lg opacity-90 group-hover:opacity-100 transition-opacity duration-300"
             />
