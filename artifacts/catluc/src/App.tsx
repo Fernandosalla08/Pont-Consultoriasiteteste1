@@ -710,7 +710,8 @@ function Footer() {
           <img
             src={`${import.meta.env.BASE_URL}pont-automacao-recolored.png`}
             alt="Pont Automação"
-            className="h-32 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+            className="h-32 w-auto transition-all duration-300"
+            style={{ filter: "brightness(1.8) contrast(1.2)" }}
           />
           <div className="flex items-center gap-3 mt-2 px-6 py-3 border border-white/20 rounded-full bg-white/5 group-hover:bg-white/10 group-hover:border-white/40 transition-all duration-300">
             <span className="text-white font-semibold text-sm uppercase tracking-[0.2em]">Visitar site da Pont Automação</span>
