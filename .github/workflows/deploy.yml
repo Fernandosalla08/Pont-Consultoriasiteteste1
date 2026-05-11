@@ -46,7 +46,7 @@ jobs:
             ${{ runner.os }}-pnpm-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --ignore-scripts
+        run: pnpm install --no-frozen-lockfile --ignore-scripts
 
       - name: Build site
         run: pnpm --filter @workspace/catluc exec vite build --config vite.config.pages.ts
