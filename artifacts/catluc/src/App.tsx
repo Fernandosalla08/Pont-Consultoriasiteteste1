@@ -693,12 +693,7 @@ function Footer() {
     <footer className="bg-transparent border-t border-white/5">
       {/* Grupo Pont CTA */}
       <div className="border-b border-white/5 py-16">
-        <a
-          href="https://www.pontautomacao.com.br/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex flex-col items-center gap-5 group"
-        >
+        <div className="flex flex-col items-center gap-5">
           <p className="text-white font-bold text-sm uppercase tracking-widest text-center leading-relaxed">
             Soluções em<br />Engenharia de Produto
           </p>
@@ -706,18 +701,23 @@ function Footer() {
             <img
               src={`${import.meta.env.BASE_URL}pont-automacao-infografico-v4.png`}
               alt="Infográfico Pont Automação"
-              className="w-full rounded-lg opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+              className="w-full rounded-lg opacity-90 transition-opacity duration-300"
             />
-            <div className="absolute flex flex-col items-center gap-2 px-4 py-3 border border-white/30 rounded-xl bg-white/10 group-hover:bg-white/20 group-hover:border-white/60 transition-all duration-300"
-              style={{ top: "38%", left: "1%", width: "22%" }}>
+            <a
+              href="https://www.pontautomacao.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute flex flex-col items-center gap-2 px-4 py-3 border border-white/30 rounded-xl bg-white/10 hover:bg-white/20 hover:border-white/60 transition-all duration-300 group"
+              style={{ top: "38%", left: "1%", width: "22%" }}
+            >
               <span className="text-white font-semibold text-xs text-center leading-relaxed">Clique aqui e saiba como transformar os seus projetos feitos manualmente em um configurador de produtos</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white shrink-0">
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
-            </div>
+            </a>
           </div>
-        </a>
+        </div>
       </div>
 
       {/* Copyright row */}
