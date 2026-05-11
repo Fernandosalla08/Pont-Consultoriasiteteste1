@@ -724,7 +724,7 @@ function Footer() {
       <div className="py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <a href="https://www.pontconsultoria.com.br/" target="_blank" rel="noopener noreferrer">
-            <img src={pontLogo} alt="Pont Consultoria" className="h-36 w-auto mix-blend-screen" style={{ filter: "contrast(1.8) brightness(1.4)" }} />
+            <img src={pontLogo} alt="Pont Consultoria" className="h-48 w-auto mix-blend-screen" style={{ filter: "contrast(1.8) brightness(1.4)" }} />
           </a>
           <p className="text-white/30 text-xs text-center">
             © {new Date().getFullYear()} Pont Consultoria. Todos os direitos reservados.
