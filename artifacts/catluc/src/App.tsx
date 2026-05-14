@@ -55,7 +55,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const links = [
     { label: "Serviços", id: "serviços" },
-    { label: "VSM & Lean", id: "vsm-&-lean" },
+    { label: "STP & Lean", id: "stp-&-lean" },
     { label: "Teoria das Restrições", id: "toc" },
     { label: "Indústrias", id: "indústrias" },
     { label: "Contato", id: "contato" },
@@ -266,7 +266,7 @@ const vsmCards = [
 
 function VSM() {
   return (
-    <section id="vsm-&-lean" className="bg-transparent border-t border-white/5 py-28">
+    <section id="stp-&-lean" className="bg-transparent border-t border-white/5 py-28">
       <div className="max-w-7xl mx-auto px-6">
         <Section>
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
