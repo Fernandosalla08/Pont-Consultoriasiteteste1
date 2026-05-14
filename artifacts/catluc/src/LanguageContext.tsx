@@ -12,9 +12,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
 export function useLanguage() { return useContext(LanguageContext); }
 
-export const flags: { lang: Lang; flag: string; label: string }[] = [
-  { lang: "pt", flag: "🇧🇷", label: "PT" },
-  { lang: "en", flag: "🇺🇸", label: "EN" },
-  { lang: "es", flag: "🇪🇸", label: "ES" },
-  { lang: "de", flag: "🇩🇪", label: "DE" },
+export const flags: { lang: Lang; flagUrl: string; label: string }[] = [
+  { lang: "pt", flagUrl: "https://flagcdn.com/w40/br.png", label: "PT" },
+  { lang: "en", flagUrl: "https://flagcdn.com/w40/us.png", label: "EN" },
+  { lang: "es", flagUrl: "https://flagcdn.com/w40/es.png", label: "ES" },
+  { lang: "de", flagUrl: "https://flagcdn.com/w40/de.png", label: "DE" },
 ];

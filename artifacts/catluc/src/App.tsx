@@ -67,7 +67,7 @@ function LanguageSwitcher() {
               : "text-white/40 hover:text-white/70 border border-transparent"
           }`}
         >
-          <span className="text-base leading-none">{f.flag}</span>
+          <img src={f.flagUrl} alt={f.label} className="w-5 h-auto rounded-sm" />
           <span>{f.label}</span>
         </button>
       ))}
