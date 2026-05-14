@@ -54,23 +54,34 @@ function Section({ children, className = "" }: { children: React.ReactNode; clas
 /* ── Language Switcher ── */
 function LanguageSwitcher() {
   const { lang, setLang } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const current = flags.find((f) => f.lang === lang)!;
+
   return (
-    <div className="flex items-center gap-3">
-      {flags.map((f) => (
-        <button
-          key={f.lang}
-          onClick={() => setLang(f.lang)}
-          title={f.label}
-          className={`flex items-center gap-2 px-3 py-1.5 text-sm font-bold uppercase tracking-wider transition-all border ${
-            lang === f.lang
-              ? "bg-[#2A3E7C]/30 text-white border-[#2A3E7C]/60"
-              : "text-white/40 hover:text-white/70 border-transparent"
-          }`}
-        >
-          <img src={f.flagUrl} alt={f.label} className="w-6 h-auto rounded-sm" />
-          <span>{f.label}</span>
-        </button>
-      ))}
+    <div className="relative">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center gap-2 px-3 py-1.5 text-sm font-bold uppercase tracking-wider border border-[#2A3E7C]/60 bg-[#2A3E7C]/20 text-white hover:bg-[#2A3E7C]/30 transition-all"
+      >
+        <img src={current.flagUrl} alt={current.label} className="w-6 h-auto rounded-sm" />
+        <span>{current.label}</span>
+        <span className="text-[#2A3E7C] text-xs ml-1">{open ? "▲" : "▼"}</span>
+      </button>
+
+      {open && (
+        <div className="absolute right-0 top-full mt-1 flex flex-col border border-white/10 bg-black/90 backdrop-blur-md z-50 min-w-full">
+          {flags.filter((f) => f.lang !== lang).map((f) => (
+            <button
+              key={f.lang}
+              onClick={() => { setLang(f.lang); setOpen(false); }}
+              className="flex items-center gap-2 px-3 py-2 text-sm font-bold uppercase tracking-wider text-white/50 hover:text-white hover:bg-[#2A3E7C]/20 transition-all whitespace-nowrap"
+            >
+              <img src={f.flagUrl} alt={f.label} className="w-6 h-auto rounded-sm" />
+              <span>{f.label}</span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
