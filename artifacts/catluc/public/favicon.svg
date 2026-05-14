@@ -1,6 +1,8 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="12" fill="#0f1623"/>
-  <text x="32" y="44" font-family="Arial, sans-serif" font-weight="900" font-size="38" fill="white" text-anchor="middle">P</text>
-  <path d="M16 18 Q32 6 48 18" stroke="#7dd3d8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  <path d="M20 14 Q32 2 44 14" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <rect width="64" height="64" rx="10" fill="#0f1623"/>
+  <!-- Arcos -->
+  <path d="M10 30 Q32 6 54 30" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M16 30 Q32 12 48 30" stroke="#7dd3d8" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Texto PONT -->
+  <text x="32" y="52" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="22" fill="white" text-anchor="middle" letter-spacing="1">PONT</text>
 </svg>
