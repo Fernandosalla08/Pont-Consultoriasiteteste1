@@ -332,7 +332,7 @@ function AutomationPhilosophy() {
           {steps.map((s, i) => (
             <Section key={i}>
               <motion.div variants={fadeUp} custom={i} className="bg-transparent p-10 relative h-full">
-                <div className="text-[#2A3E7C]/60 text-8xl font-black absolute top-6 right-6 leading-none select-none">{s.num}</div>
+                <div className="text-[#2A3E7C]/40 text-4xl font-black absolute top-4 right-4 leading-none select-none">{s.num}</div>
                 <s.icon className="text-[#2A3E7C] mb-5" size={24} />
                 <h3 className="text-white font-bold text-xl uppercase tracking-tight mb-3">{s.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
