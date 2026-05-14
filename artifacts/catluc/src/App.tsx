@@ -152,9 +152,9 @@ function Hero() {
           className="flex flex-col sm:flex-row gap-6 sm:gap-16 mb-14"
         >
           {[
-            { value: "3X", label: "Ganho Médio de OEE dos Equipamentos Gargalo" },
+            { value: "30%", label: "Ganho Médio de OEE dos Equipamentos Gargalo" },
             { value: "60%", label: "Redução de Desperdícios" },
-            { value: "90 Dias", label: "Retorno Rápido" },
+            { value: "90 Dias", label: "ROI" },
           ].map((m) => (
             <div key={m.label} className="border-l-2 border-[#2A3E7C] pl-4">
               <div className="text-3xl font-black text-white">{m.value}</div>
@@ -163,27 +163,6 @@ function Hero() {
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex flex-wrap gap-4"
-        >
-          <a
-            href="#contato"
-            onClick={(e) => { e.preventDefault(); document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" }); }}
-            className="inline-flex items-center gap-2 bg-[#2A3E7C] hover:bg-[#2A3E7C] text-black font-bold px-8 py-4 text-sm uppercase tracking-wider transition-all"
-          >
-            Inicie sua Transformação <FiArrowRight />
-          </a>
-          <a
-            href="#serviços"
-            onClick={(e) => { e.preventDefault(); document.getElementById("serviços")?.scrollIntoView({ behavior: "smooth" }); }}
-            className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white font-bold px-8 py-4 text-sm uppercase tracking-wider transition-all"
-          >
-            Ver Serviços
-          </a>
-        </motion.div>
       </div>
     </section>
   );
