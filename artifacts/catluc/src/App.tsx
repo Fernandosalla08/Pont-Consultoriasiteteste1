@@ -349,7 +349,7 @@ function AutomationPhilosophy() {
         <Section>
           <motion.p variants={fadeUp} className="text-white/50 text-base max-w-3xl leading-relaxed border-l-4 border-[#2A3E7C] pl-6">
             Poucas empresas no mundo aplicam essa sequência. A maioria automatiza primeiro — e incorpora permanentemente suas ineficiências em máquinas caras.{" "}
-            <strong className="text-white">Nós otimizamos processos enxutos. Nunca perdas.</strong>
+            <strong className="text-white">Nós automatizamos processos enxutos. Nunca perdas.</strong>
           </motion.p>
         </Section>
       </div>
