@@ -168,13 +168,11 @@ function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.9] md:leading-[0.88] tracking-tighter text-white mb-10 break-words hyphens-auto"
+          className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.9] md:leading-[0.88] tracking-tighter text-white mb-10"
         >
-          {t.hero.h1[0]}{" "}
-          <br className="hidden md:block" />
-          {t.hero.h1[1]}{" "}
-          <br className="hidden md:block" />
-          <em className="not-italic text-[#2A3E7C]">{t.hero.h1Accent}</em>
+          <span className="block">{t.hero.h1[0]}</span>
+          <span className="block">{t.hero.h1[1]}</span>
+          <em className="block not-italic text-[#2A3E7C]">{t.hero.h1Accent}</em>
         </motion.h1>
 
         <motion.p
