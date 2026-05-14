@@ -1,3 +1,6 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="180" height="180" rx="36" fill="#FF3C00"/>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="#0f1623"/>
+  <text x="32" y="44" font-family="Arial, sans-serif" font-weight="900" font-size="38" fill="white" text-anchor="middle">P</text>
+  <path d="M16 18 Q32 6 48 18" stroke="#7dd3d8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M20 14 Q32 2 44 14" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
 </svg>
