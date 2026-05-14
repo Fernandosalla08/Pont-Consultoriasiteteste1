@@ -68,8 +68,8 @@ function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-48">
-        <img src={pontLogo} alt="Pont Consultoria" className="h-44 w-auto" />
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+        <img src={pontLogo} alt="Pont Consultoria" className="h-10 w-auto" />
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <button
@@ -111,7 +111,7 @@ function Navbar() {
 /* ── Hero ── */
 function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-transparent pt-48">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-transparent pt-16">
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
         <motion.p
