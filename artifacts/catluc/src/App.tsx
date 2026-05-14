@@ -363,7 +363,7 @@ const tocSteps = [
   { icon: FiMaximize, title: "Explorar a Restrição", desc: "Antes de adicionar recursos, extraímos o máximo desempenho da restrição com zero investimento adicional." },
   { icon: FiLayers, title: "Subordinar Tudo ao Resto", desc: "Todos os outros processos se alinham para apoiar a restrição. Paramos de otimizar não-gargalos que criam eficiência falsa." },
   { icon: FiZap, title: "Elevar a Restrição", desc: "Quando necessário, investimos com precisão — otimização, capacidade ou competência — para quebrar permanentemente o gargalo." },
-  { icon: FiRepeat, title: "Repetir & Acelerar", desc: "As restrições mudam conforme o desempenho melhora. Instalamos uma cultura de melhoria contínua que sustenta cada ganho." },
+  { icon: FiRepeat, title: "Repetir & Acelerar", desc: "As restrições podem acabar mudando, se não segurarmos as rédeas do nosso negócio. Instalamos uma cultura para manter o gargalo fixo e que assim a empresa funciona com mais estabilidade." },
 ];
 
 const throughputSteps = [
