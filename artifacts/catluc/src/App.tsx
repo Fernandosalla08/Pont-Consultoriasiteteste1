@@ -279,7 +279,7 @@ function VSM() {
             Realizamos uma análise profunda da sua fábrica usando o <strong className="text-white">Fluxo de Valor do Shingo</strong>, a ferramenta central do Sistema Toyota de Produção criada por <strong className="text-white">Shigeo Shingo</strong> — tornando cada perda, desperdício e ineficiência visível em todo o fluxo produtivo.
           </motion.p>
           <motion.p variants={fadeUp} custom={3} className="text-white/50 text-base max-w-3xl mb-10 leading-relaxed">
-            A partir do VSM, aplicamos <strong className="text-white">Análise de Pareto</strong> para ranquear e priorizar as maiores perdas, concentrando energia exatamente onde ela entrega os resultados mais rápidos e significativos.
+            A partir do STP, aplicamos <strong className="text-white">Análise de Pareto</strong> para ranquear e priorizar as maiores perdas, concentrando energia exatamente onde ela entrega os resultados mais rápidos e significativos.
           </motion.p>
         </Section>
 
