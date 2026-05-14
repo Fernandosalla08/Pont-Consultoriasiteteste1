@@ -676,7 +676,7 @@ function Footer() {
           <p className="text-white font-bold text-sm uppercase tracking-widest text-center leading-relaxed">
             Soluções em<br />Engenharia de Produto
           </p>
-          <div className="relative w-full max-w-4xl mt-4">
+          <div className="relative w-full max-w-7xl mt-4">
             <img
               src={`${import.meta.env.BASE_URL}pont-automacao-infografico-v4.png`}
               alt="Infográfico Pont Automação"
