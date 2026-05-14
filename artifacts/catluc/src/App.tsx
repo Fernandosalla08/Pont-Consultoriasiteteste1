@@ -55,7 +55,7 @@ function Section({ children, className = "" }: { children: React.ReactNode; clas
 function LanguageSwitcher() {
   const { lang, setLang } = useLanguage();
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-3">
       {flags.map((f) => (
         <button
           key={f.lang}
