@@ -235,12 +235,12 @@ function Services() {
 
 /* ── VSM ── */
 const vsmCards = [
-  { icon: FiMapPin, title: "VSM do Estado Atual", desc: "Mapeamos todo o fluxo de valor como existe hoje — cada etapa, cada espera, cada passagem — do material bruto ao produto expedido. Todo desperdício fica visível." },
+  { icon: FiMapPin, title: "MFV do Estado Atual", desc: "Mapeamos todo o fluxo de valor como existe hoje — cada etapa, cada espera, cada passagem — do material bruto ao produto expedido. Todo desperdício fica visível." },
   { icon: FiBarChart2, title: "Análise de Perdas por Pareto", desc: "Quantificamos cada perda em tempo, custo e capacidade e ranqueamos pelo impacto. Os 20% maiores problemas causam 80% do dano — vamos direto ao ponto." },
   { icon: FiZap, title: "Eventos de Melhoria Rápida (Kaizen)", desc: "Workshops focados de 3–5 dias atacando as perdas de maior prioridade. Resultados imediatos e mensuráveis — sem meses de planejamento antes da ação." },
   { icon: FiActivity, title: "Design de Fluxo e Sincronismo", desc: "Redesenhamos o fluxo de produção para eliminar esperas e sincronizar todas as etapas ao takt time do cliente — suave, contínuo e sem desperdício." },
   { icon: FiSliders, title: "Otimização de Layout", desc: "Layout físico da fábrica redesenhado para movimento mínimo, fluxo lógico e gestão visual." },
-  { icon: FiFlag, title: "VSM do Estado Futuro", desc: "Desenhamos o estado futuro ideal — um blueprint concreto e executável com lead time drasticamente reduzido e máximo fluxo de valor." },
+  { icon: FiFlag, title: "MFV do Estado Futuro", desc: "Desenhamos o estado futuro ideal — um blueprint concreto e executável com lead time drasticamente reduzido e máximo fluxo de valor." },
 ];
 
 function VSM() {
