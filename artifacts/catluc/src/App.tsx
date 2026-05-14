@@ -168,7 +168,7 @@ function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.88] tracking-tighter text-white mb-10"
+          className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.9] md:leading-[0.88] tracking-tighter text-white mb-10 break-words hyphens-auto"
         >
           {t.hero.h1[0]}{" "}
           <br className="hidden md:block" />
@@ -216,7 +216,7 @@ function Services() {
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             {t.services.tag}
           </motion.p>
-          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
+          <motion.h2 variants={fadeUp} custom={1} className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4 break-words hyphens-auto">
             {t.services.title} <em className="not-italic text-[#2A3E7C]">{t.services.titleAccent}</em>
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-2xl mb-16">
@@ -266,7 +266,7 @@ function VSM() {
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             {t.vsm.tag}
           </motion.p>
-          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
+          <motion.h2 variants={fadeUp} custom={1} className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4 break-words hyphens-auto">
             {t.vsm.title} <em className="not-italic text-[#2A3E7C]">{t.vsm.titleAccent}</em>
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-3xl mb-6 leading-relaxed">
@@ -329,7 +329,7 @@ function AutomationPhilosophy() {
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             {t.automation.tag}
           </motion.p>
-          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-12">
+          <motion.h2 variants={fadeUp} custom={1} className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-12 break-words hyphens-auto">
             {t.automation.title1}{" "}
             <em className="not-italic text-[#2A3E7C]">{t.automation.title1Accent}</em>
             <br />
@@ -390,7 +390,7 @@ function TOC() {
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             {t.toc.tag}
           </motion.p>
-          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-16">
+          <motion.h2 variants={fadeUp} custom={1} className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-16 break-words hyphens-auto">
             {t.toc.title} <em className="not-italic text-[#2A3E7C]">{t.toc.titleAccent}</em>
           </motion.h2>
         </Section>
@@ -466,7 +466,7 @@ function FinancialCompass() {
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             {fc.tag}
           </motion.p>
-          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
+          <motion.h2 variants={fadeUp} custom={1} className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4 break-words hyphens-auto">
             {fc.titleFull.split(/BÚSSOLA|COMPASS|BRÚJULA|KOMPASS/).length > 1 ? (
               <>
                 {fc.titleFull.split(/(BÚSSOLA|COMPASS|BRÚJULA|KOMPASS|FINANCEIRA|FINANCIAL|FINANCIERO|FINANZIELLE[NR]?|FINANCIERO|DER FINANZIELLE KOMPASS|THE FINANCIAL COMPASS|LA BRÚJULA FINANCIERA|A BÚSSOLA FINANCEIRA)/i)[0]}
@@ -527,7 +527,7 @@ function Industries() {
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             {t.industries.tag}
           </motion.p>
-          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4">
+          <motion.h2 variants={fadeUp} custom={1} className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4 break-words hyphens-auto">
             {t.industries.title} <em className="not-italic text-[#2A3E7C]">{t.industries.titleAccent}</em>
           </motion.h2>
           <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg max-w-2xl mb-16">
@@ -563,7 +563,7 @@ function WhyChoose() {
           <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
             {t.whyChoose.tag}
           </motion.p>
-          <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-16">
+          <motion.h2 variants={fadeUp} custom={1} className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-16 break-words hyphens-auto">
             {t.whyChoose.title} <em className="not-italic text-[#2A3E7C]">{t.whyChoose.titleAccent}</em>
           </motion.h2>
         </Section>
@@ -610,7 +610,7 @@ function Contact() {
             <motion.p variants={fadeUp} className="text-[#2A3E7C] text-xs font-bold tracking-[0.3em] uppercase mb-3">
               {t.contact.tag}
             </motion.p>
-            <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-6">
+            <motion.h2 variants={fadeUp} custom={1} className="text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-6 break-words hyphens-auto">
               {t.contact.title} <em className="not-italic text-[#2A3E7C]">{t.contact.titleAccent}</em>
             </motion.h2>
             <motion.p variants={fadeUp} custom={2} className="text-white/50 text-lg mb-10 leading-relaxed">
