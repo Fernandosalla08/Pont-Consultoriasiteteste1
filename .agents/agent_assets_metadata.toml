@@ -12,3 +12,9 @@ id = "cevxISxgCsc6pvb22w3tg"
 uri = "file://pont-consultoria-github-pages.zip"
 type = "unspecified"
 title = "Pont Consultoria — GitHub Pages v5 (final)"
+
+[[outputs]]
+id = "Rjj0SYCpXwQJWR76fNiim"
+uri = "file://artifacts/catluc/public/pont-consulting-favicon.png"
+type = "image"
+title = "Favicon - Logo Pont Consulting"
