@@ -610,8 +610,8 @@ function Contact() {
             </motion.p>
             <motion.div variants={fadeUp} custom={3} className="flex items-center gap-4">
               <FiMail className="text-[#2A3E7C]" size={20} />
-              <a href="mailto:contato@pontconsultoria.com.br" className="text-white/70 hover:text-white transition-colors font-mono text-sm">
-                contato@pontconsultoria.com.br
+              <a href="mailto:contato@pontgroup.net" className="text-white/70 hover:text-white transition-colors font-mono text-sm">
+                contato@pontgroup.net
               </a>
             </motion.div>
           </Section>
