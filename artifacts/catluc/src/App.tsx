@@ -68,7 +68,7 @@ function LanguageSwitcher() {
           }`}
         >
           <span className="text-base leading-none">{f.flag}</span>
-          <span className="hidden sm:inline">{f.label}</span>
+          <span>{f.label}</span>
         </button>
       ))}
     </div>
