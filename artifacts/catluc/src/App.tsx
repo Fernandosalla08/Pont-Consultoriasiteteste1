@@ -61,10 +61,10 @@ function LanguageSwitcher() {
           key={f.lang}
           onClick={() => setLang(f.lang)}
           title={f.label}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-sm font-bold uppercase tracking-wider transition-all ${
+          className={`flex items-center gap-2 px-3 py-1.5 text-sm font-bold uppercase tracking-wider transition-all border ${
             lang === f.lang
-              ? "bg-[#2A3E7C]/30 text-white border border-[#2A3E7C]/60"
-              : "text-white/40 hover:text-white/70 border border-transparent"
+              ? "bg-[#2A3E7C]/30 text-white border-[#2A3E7C]/60"
+              : "text-white/40 hover:text-white/70 border-transparent"
           }`}
         >
           <img src={f.flagUrl} alt={f.label} className="w-6 h-auto rounded-sm" />
