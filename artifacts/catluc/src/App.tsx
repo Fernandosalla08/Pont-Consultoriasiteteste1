@@ -674,6 +674,99 @@ function Contact() {
   );
 }
 
+/* ── Infographic Banner ── */
+const pontAutoLogo = `${base}pont-automacao-logo.png`;
+
+function InfographicBanner() {
+  const { t } = useLanguage();
+  const inf = t.infographic;
+  const icons = [<FiCpu key={0} size={15} />, <FiSettings key={1} size={15} />, <FiLayers key={2} size={15} />];
+
+  return (
+    <div className="w-full max-w-7xl border border-white/10 rounded-xl overflow-hidden bg-[#060e1e]">
+      {/* Header */}
+      <div className="px-5 py-4 border-b border-white/10 bg-[#0a1628]">
+        <h3 className="text-white font-bold text-sm md:text-base leading-snug break-words hyphens-auto">{inf.title}</h3>
+        <p className="text-white/40 text-xs mt-1 leading-relaxed">{inf.subtitle}</p>
+      </div>
+
+      {/* Body */}
+      <div className="grid md:grid-cols-[180px_1fr_220px] divide-y md:divide-y-0 md:divide-x divide-white/10">
+
+        {/* Left: Logo + CTA */}
+        <div className="flex flex-col items-center justify-center gap-4 p-5">
+          <img src={pontAutoLogo} alt="Pont Automação" className="w-28 opacity-90" />
+          <a
+            href="https://www.pontautomacao.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-2 p-3 border border-white/20 rounded-xl bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all text-center"
+          >
+            <span className="text-white text-xs font-semibold leading-relaxed">{t.footer.ctaText}</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#2A3E7C] shrink-0">
+              <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
+
+        {/* Center: Solutions + Table */}
+        <div className="divide-y divide-white/10">
+          <div className="p-5">
+            <p className="text-[#2A3E7C] text-xs font-bold uppercase tracking-widest mb-4">{inf.solutionsHeading}</p>
+            <div className="flex flex-col gap-3">
+              {inf.solutions.map((s, i) => (
+                <div key={i} className="flex gap-3">
+                  <div className="shrink-0 mt-0.5 text-[#2A3E7C]">{icons[i]}</div>
+                  <div>
+                    <p className="text-white font-bold text-xs break-words hyphens-auto">{s.title}</p>
+                    <p className="text-white/40 text-xs mt-0.5 leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="p-5">
+            <p className="text-white font-bold text-xs mb-3 break-words">{inf.tableTitle}</p>
+            <table className="w-full text-xs border-collapse">
+              <thead>
+                <tr>
+                  {inf.tableHeaders.map((h, i) => (
+                    <th key={i} className={`text-left py-1.5 pr-3 font-bold ${i === 2 ? "text-[#2A3E7C]" : "text-white/40"}`}>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {inf.tableRows.map((row, i) => (
+                  <tr key={i} className="border-t border-white/10">
+                    {row.map((cell, j) => (
+                      <td key={j} className={`py-2 pr-3 leading-tight ${j === 2 ? "text-[#2A3E7C] font-black text-sm" : "text-white/60"}`}>{cell}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Right: Results */}
+        <div className="p-5">
+          <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-5">{inf.resultsHeading}</p>
+          <div className="flex flex-col gap-5">
+            {inf.results.map((r, i) => (
+              <div key={i}>
+                <div className="text-2xl md:text-3xl font-black text-[#2A3E7C] break-words">{r.value}</div>
+                <div className="text-white font-bold text-xs mt-1 break-words">{r.label}</div>
+                <div className="text-white/40 text-xs mt-0.5 leading-relaxed">{r.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
 /* ── Footer ── */
 function Footer() {
   const { t } = useLanguage();
@@ -686,26 +779,7 @@ function Footer() {
               <React.Fragment key={i}>{line}{i === 0 && <br />}</React.Fragment>
             ))}
           </p>
-          <div className="relative w-full max-w-7xl mt-4">
-            <img
-              src={`${import.meta.env.BASE_URL}pont-automacao-infografico-v4.png`}
-              alt="Infográfico Pont Automação"
-              className="w-full rounded-lg opacity-90 transition-opacity duration-300"
-            />
-            <a
-              href="https://www.pontautomacao.com.br/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute flex flex-col items-center gap-2 px-4 py-3 border border-white/30 rounded-xl bg-white/10 hover:bg-white/20 hover:border-white/60 transition-all duration-300 group"
-              style={{ top: "38%", left: "1%", width: "22%" }}
-            >
-              <span className="text-white font-semibold text-xs text-center leading-relaxed">{t.footer.ctaText}</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white shrink-0">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </a>
-          </div>
+          <InfographicBanner />
         </div>
       </div>
 

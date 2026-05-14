@@ -12,6 +12,17 @@ export interface T {
   whyChoose: { tag: string; title: string; titleAccent: string; items: { title: string; desc: string }[]; quote: string; quoteAuthor: string };
   contact: { tag: string; title: string; titleAccent: string; subtitle: string; fields: { name: { label: string; placeholder: string }; email: { label: string; placeholder: string }; company: { label: string; placeholder: string }; message: { label: string; placeholder: string } }; button: string; successTitle: string; successSubtitle: string };
   footer: { solutionsTitle: string; ctaText: string; copyright: string; links: string[] };
+  infographic: {
+    title: string;
+    subtitle: string;
+    solutionsHeading: string;
+    solutions: { title: string; desc: string }[];
+    tableTitle: string;
+    tableHeaders: string[];
+    tableRows: string[][];
+    resultsHeading: string;
+    results: { value: string; label: string; desc: string }[];
+  };
 }
 
 const year = new Date().getFullYear();
@@ -120,6 +131,28 @@ export const translations: Record<Lang, T> = {
       button: "Enviar Mensagem", successTitle: "Mensagem Enviada!", successSubtitle: "Retornaremos em até 24 horas.",
     },
     footer: { solutionsTitle: "Soluções em\nEngenharia de Produto", ctaText: "Clique aqui e saiba como transformar os seus projetos feitos manualmente em um configurador de produtos", copyright: `© ${year} Pont Consultoria. Todos os direitos reservados.`, links: ["Serviços", "Contato"] },
+    infographic: {
+      title: "Automação de Projetos: Transformando Engenharia em Resultados Financeiros",
+      subtitle: "Como a Pont Automação otimiza processos, elimina tarefas repetitivas e aumenta a produtividade e o faturamento.",
+      solutionsHeading: "Nossas Soluções de Automação",
+      solutions: [
+        { title: "Automação de Projetos (Programação + Engenharia)", desc: "Automatizamos tarefas repetitivas para gerar trabalhos, orçamentos e modelos 3D seguindo suas diretrizes." },
+        { title: "Projeto Mecânico Turnkey", desc: "Soluções completas, desde a coleta de informações até a documentação final para fabricação." },
+        { title: "Suporte Técnico e Capacitação", desc: "Treinamentos específicos e fluxos de trabalho projetados para maximizar seu ganho competitivo." },
+      ],
+      tableTitle: "Comparativo de Ganho de Escala e Eficiência",
+      tableHeaders: ["", "Antes da Automação", "Com Pont Automação"],
+      tableRows: [
+        ["Capacidade de Ajustes ETO", "5 produtos/mês", "600 produtos/mês"],
+        ["Leadtime de Engenharia", "Base 100%", "Redução de 35%"],
+      ],
+      resultsHeading: "Exemplos de Resultados Atingidos",
+      results: [
+        { value: "5 dias → 10 min", label: "Redução de Tempo de 5 Dias para 10 Minutos", desc: "Otimização drástica no desenvolvimento de produtos Engineered to Order (ETO)." },
+        { value: "88%", label: "Redução no Erro Humano", desc: "Aumento da precisão e padronização através de modelos configuráveis." },
+        { value: "47%", label: "Queda no WIP da Engenharia", desc: "Redução significativa do trabalho em andamento, acelerando o fluxo de caixa." },
+      ],
+    },
   },
 
   en: {
@@ -225,6 +258,28 @@ export const translations: Record<Lang, T> = {
       button: "Send Message", successTitle: "Message Sent!", successSubtitle: "We'll get back to you within 24 hours.",
     },
     footer: { solutionsTitle: "Solutions in\nProduct Engineering", ctaText: "Click here and learn how to transform your manually created projects into a product configurator", copyright: `© ${year} Pont Consultoria. All rights reserved.`, links: ["Services", "Contact"] },
+    infographic: {
+      title: "Project Automation: Turning Engineering into Financial Results",
+      subtitle: "How Pont Automation optimizes processes, eliminates repetitive tasks, and increases productivity and revenue.",
+      solutionsHeading: "Our Automation Solutions",
+      solutions: [
+        { title: "Project Automation (Programming + Engineering)", desc: "We automate repetitive tasks to generate work orders, quotes, and 3D models following your guidelines." },
+        { title: "Turnkey Mechanical Design", desc: "Complete solutions, from data collection to final manufacturing documentation." },
+        { title: "Technical Support & Training", desc: "Specific training and workflows designed to maximize your competitive advantage." },
+      ],
+      tableTitle: "Scale & Efficiency Gains Comparison",
+      tableHeaders: ["", "Before Automation", "With Pont Automation"],
+      tableRows: [
+        ["ETO Adjustment Capacity", "5 products/month", "600 products/month"],
+        ["Engineering Lead Time", "Base 100%", "35% Reduction"],
+      ],
+      resultsHeading: "Examples of Results Achieved",
+      results: [
+        { value: "5 days → 10 min", label: "Time Reduction from 5 Days to 10 Minutes", desc: "Drastic optimization in Engineered to Order (ETO) product development." },
+        { value: "88%", label: "Reduction in Human Error", desc: "Increased precision and standardization through configurable models." },
+        { value: "47%", label: "Drop in Engineering WIP", desc: "Significant reduction in work in progress, accelerating cash flow." },
+      ],
+    },
   },
 
   es: {
@@ -330,6 +385,28 @@ export const translations: Record<Lang, T> = {
       button: "Enviar Mensaje", successTitle: "¡Mensaje Enviado!", successSubtitle: "Nos pondremos en contacto en 24 horas.",
     },
     footer: { solutionsTitle: "Soluciones en\nIngeniería de Producto", ctaText: "Haga clic aquí y aprenda cómo transformar sus proyectos realizados manualmente en un configurador de productos", copyright: `© ${year} Pont Consultoria. Todos los derechos reservados.`, links: ["Servicios", "Contacto"] },
+    infographic: {
+      title: "Automatización de Proyectos: Convirtiendo Ingeniería en Resultados Financieros",
+      subtitle: "Cómo Pont Automatización optimiza procesos, elimina tareas repetitivas y aumenta la productividad y la facturación.",
+      solutionsHeading: "Nuestras Soluciones de Automatización",
+      solutions: [
+        { title: "Automatización de Proyectos (Programación + Ingeniería)", desc: "Automatizamos tareas repetitivas para generar trabajos, presupuestos y modelos 3D siguiendo sus directrices." },
+        { title: "Proyecto Mecánico Turnkey", desc: "Soluciones completas, desde la recopilación de información hasta la documentación final para fabricación." },
+        { title: "Soporte Técnico y Capacitación", desc: "Entrenamientos específicos y flujos de trabajo diseñados para maximizar su ventaja competitiva." },
+      ],
+      tableTitle: "Comparativo de Ganancia de Escala y Eficiencia",
+      tableHeaders: ["", "Antes de la Automatización", "Con Pont Automatización"],
+      tableRows: [
+        ["Capacidad de Ajustes ETO", "5 productos/mes", "600 productos/mes"],
+        ["Lead Time de Ingeniería", "Base 100%", "Reducción del 35%"],
+      ],
+      resultsHeading: "Ejemplos de Resultados Obtenidos",
+      results: [
+        { value: "5 días → 10 min", label: "Reducción de Tiempo de 5 Días a 10 Minutos", desc: "Optimización drástica en el desarrollo de productos Engineered to Order (ETO)." },
+        { value: "88%", label: "Reducción del Error Humano", desc: "Mayor precisión y estandarización a través de modelos configurables." },
+        { value: "47%", label: "Caída del WIP de Ingeniería", desc: "Reducción significativa del trabajo en curso, acelerando el flujo de caja." },
+      ],
+    },
   },
 
   de: {
@@ -435,5 +512,27 @@ export const translations: Record<Lang, T> = {
       button: "Nachricht senden", successTitle: "Nachricht gesendet!", successSubtitle: "Wir melden uns innerhalb von 24 Stunden.",
     },
     footer: { solutionsTitle: "Lösungen in der\nProduktentwicklung", ctaText: "Klicken Sie hier und erfahren Sie, wie Sie Ihre manuell erstellten Projekte in einen Produktkonfigurator verwandeln", copyright: `© ${year} Pont Consultoria. Alle Rechte vorbehalten.`, links: ["Leistungen", "Kontakt"] },
+    infographic: {
+      title: "Projektautomatisierung: Engineering in Finanzergebnisse umwandeln",
+      subtitle: "Wie Pont Automation Prozesse optimiert, Routineaufgaben eliminiert und Produktivität sowie Umsatz steigert.",
+      solutionsHeading: "Unsere Automatisierungslösungen",
+      solutions: [
+        { title: "Projektautomatisierung (Programmierung + Engineering)", desc: "Wir automatisieren Routineaufgaben, um Aufträge, Angebote und 3D-Modelle nach Ihren Vorgaben zu erstellen." },
+        { title: "Turnkey Maschinenbau-Projekt", desc: "Komplettlösungen, von der Datenerfassung bis zur endgültigen Fertigungsdokumentation." },
+        { title: "Technischer Support & Schulung", desc: "Spezifische Schulungen und Workflows, um Ihren Wettbewerbsvorteil zu maximieren." },
+      ],
+      tableTitle: "Vergleich der Skalen- und Effizienzgewinne",
+      tableHeaders: ["", "Vor der Automatisierung", "Mit Pont Automation"],
+      tableRows: [
+        ["ETO-Anpassungskapazität", "5 Produkte/Monat", "600 Produkte/Monat"],
+        ["Engineering-Durchlaufzeit", "Basis 100%", "35% Reduzierung"],
+      ],
+      resultsHeading: "Beispiele erzielter Ergebnisse",
+      results: [
+        { value: "5 Tage → 10 Min", label: "Zeitreduzierung von 5 Tagen auf 10 Minuten", desc: "Drastische Optimierung bei der Entwicklung von Engineered-to-Order-Produkten (ETO)." },
+        { value: "88%", label: "Reduzierung menschlicher Fehler", desc: "Erhöhte Präzision und Standardisierung durch konfigurierbare Modelle." },
+        { value: "47%", label: "Rückgang des Engineering-WIP", desc: "Deutliche Reduzierung der laufenden Arbeiten, Beschleunigung des Cashflows." },
+      ],
+    },
   },
 };
