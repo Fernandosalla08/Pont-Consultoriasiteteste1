@@ -328,17 +328,17 @@ function AutomationPhilosophy() {
           </motion.h2>
         </Section>
 
-        <div className="grid md:grid-cols-3 gap-px bg-white/5 mb-14">
+        <div className="grid md:grid-cols-3 gap-px bg-white/5 mb-16">
           {steps.map((s, i) => (
             <Section key={i}>
               <motion.div variants={fadeUp} custom={i} className="bg-transparent p-10 relative h-full">
-                <div className="text-[#2A3E7C]/40 text-5xl font-black absolute top-4 right-4 leading-none select-none">{s.num}</div>
-                <s.icon className="text-[#2A3E7C] mb-5" size={24} />
-                <h3 className="text-white font-bold text-xl uppercase tracking-tight mb-3">{s.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
+                <div className="text-[#2A3E7C]/40 text-6xl font-black absolute top-6 right-6 leading-none select-none">{s.num}</div>
+                <s.icon className="text-[#2A3E7C] mb-6" size={32} />
+                <h3 className="text-white font-bold text-2xl uppercase tracking-tight mb-4">{s.title}</h3>
+                <p className="text-white/50 text-base leading-relaxed">{s.desc}</p>
                 {i < steps.length - 1 && (
                   <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-[#2A3E7C]">
-                    <FiArrowRight size={20} />
+                    <FiArrowRight size={24} />
                   </div>
                 )}
               </motion.div>
@@ -347,7 +347,7 @@ function AutomationPhilosophy() {
         </div>
 
         <Section>
-          <motion.p variants={fadeUp} className="text-white/50 text-base max-w-3xl leading-relaxed border-l-4 border-[#2A3E7C] pl-6">
+          <motion.p variants={fadeUp} className="text-white/50 text-lg max-w-3xl leading-relaxed border-l-4 border-[#2A3E7C] pl-6">
             Poucas empresas no mundo aplicam essa sequência. A maioria automatiza primeiro — e incorpora permanentemente suas ineficiências em máquinas caras.{" "}
             <strong className="text-white">Nós automatizamos processos enxutos. Nunca perdas.</strong>
           </motion.p>
