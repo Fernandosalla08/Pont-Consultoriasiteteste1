@@ -310,7 +310,7 @@ function AutomationPhilosophy() {
   const steps = [
     { num: "1", icon: FiMapPin, title: "Mapear & Expor", desc: "Fluxo de Valor do Shingo revela cada perda e fluxo quebrado no seu processo atual" },
     { num: "2", icon: FiTarget, title: "Simplificar Primeiro", desc: "Teoria das Restrições + Lean eliminam desperdícios, sincronizam o fluxo e enxugam ao máximo" },
-    { num: "3", icon: FiCpu, title: "Só Então Otimizar", desc: "Agora automatizamos — um processo limpo, enxuto e otimizado — multiplicando a eficiência, nunca travando desperdícios" },
+    { num: "3", icon: FiCpu, title: "Só Então Automatizar", desc: "Agora automatizamos — um processo limpo, enxuto e otimizado — multiplicando a eficiência, nunca travando desperdícios" },
   ];
   return (
     <section className="bg-transparent border-t border-white/5 py-28">
